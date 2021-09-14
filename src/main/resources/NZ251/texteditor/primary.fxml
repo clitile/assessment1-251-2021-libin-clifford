@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="newF" mnemonicParsing="false" text="New" />
+                  <MenuItem fx:id="openF" mnemonicParsing="false" text="Open" />
+                  <MenuItem fx:id="saveF" mnemonicParsing="false" text="Save" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="pringtB" mnemonicParsing="false" text="print" />
+                  <MenuItem fx:id="o2pdf" mnemonicParsing="false" text="2PDF" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Tools">
+            <items>
+              <MenuItem fx:id="searchB" mnemonicParsing="false" text="Search" />
+                  <MenuItem fx:id="copyB" mnemonicParsing="false" text="Copy" />
+                  <MenuItem fx:id="pasteB" mnemonicParsing="false" text="Paste" />
+                  <MenuItem fx:id="cutB" mnemonicParsing="false" text="Cut" />
+                  <MenuItem fx:id="tdB" mnemonicParsing="false" text="Time/Date" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem fx:id="aboutB" mnemonicParsing="false" text="About" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea layoutY="27.0" prefHeight="373.0" prefWidth="600.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.399999999999977" />
+   </children>
+</AnchorPane>
