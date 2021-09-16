@@ -10,6 +10,7 @@ import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
@@ -67,11 +68,16 @@ public class PrimaryController implements Initializable {
     @FXML
     private TextArea text;
 
+    @FXML
+    private AnchorPane root;
+
     private String chosen="";
 
     private String extention;
 
     private String abPath;
+
+    private Stage stage;
 
     @FXML
     void aboutF(ActionEvent event) {
@@ -101,7 +107,7 @@ public class PrimaryController implements Initializable {
     void cutF(ActionEvent event) {
         chosen = text.getSelectedText();
         int a = text.getCaretPosition();
-        StringBuffer stringBuilder1 = new StringBuffer(text.getText());
+        StringBuilder stringBuilder1 = new StringBuilder(text.getText());
         stringBuilder1.delete(a, a + chosen.length());
         text.setText(stringBuilder1.toString());
 
@@ -115,11 +121,11 @@ public class PrimaryController implements Initializable {
     @FXML
     void pasteF(ActionEvent event) {
         Clipboard clipboard = Clipboard.getSystemClipboard();
-        if (clipboard.getString() != "") {
+        if (!clipboard.getString().equals("")) {
             chosen = clipboard.getString();
         }
         int a = text.getCaretPosition();
-        StringBuffer stringBuilder1 = new StringBuffer(text.getText());
+        StringBuilder stringBuilder1 = new StringBuilder(text.getText());
         stringBuilder1.insert(a, chosen);
         text.setText(stringBuilder1.toString());
     }
@@ -131,12 +137,8 @@ public class PrimaryController implements Initializable {
     @FXML
     void apc(MouseEvent event) {
         Clipboard clipboard = Clipboard.getSystemClipboard();
-        if (clipboard.getString() == "" && chosen=="") {
-            pasteB.setDisable(true);
-        }else {
-            pasteB.setDisable(false);
-        }
-        if (text.getSelectedText()==""){
+        pasteB.setDisable(clipboard.getString().equals("") && chosen.equals(""));
+        if (text.getSelectedText().equals("")){
             copyB.setDisable(true);
             cutB.setDisable(true);
         }else {
@@ -144,9 +146,15 @@ public class PrimaryController implements Initializable {
             cutB.setDisable(false);
         }
     }
-    @FXML
-    void newF(ActionEvent event) {
 
+    @FXML
+    void newF(ActionEvent event) throws IOException {
+        Scene scene = new Scene(App.loadFXML("primary"));
+        Stage second = new Stage();
+        second.setScene(scene);
+        second.setTitle("Text Editor");
+        second.getIcons().add(new Image("file:src\\main\\resources\\NZ251\\texteditor\\tu.jpg"));
+        second.show();
     }
 
     @FXML
@@ -169,6 +177,8 @@ public class PrimaryController implements Initializable {
         saveasB.setDisable(false);
         o2pdf.setDisable(false);
         printB.setDisable(true);
+        stage = getStage();
+        stage.setTitle("Text Editor-" + file.getName());
     }
 
     @FXML
@@ -204,7 +214,7 @@ public class PrimaryController implements Initializable {
         secondStage.show();
         AtomicReference<String> tt = new AtomicReference<>(text.getText());
         find_bu.setOnAction(item -> {
-            if (tt.get().indexOf(find_tf.getText()) == -1) {
+            if (!tt.get().contains(find_tf.getText())) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.headerTextProperty().set("String does not exist");
                 alert.setTitle("Mistake");
@@ -217,9 +227,7 @@ public class PrimaryController implements Initializable {
             String find_value = find_tf.getText();
             int len = find_value.length();
             int first = tt.get().indexOf(find_value);
-            StringBuilder a = new StringBuilder(new String());
-            a.append("*".repeat(len));
-            String s = tt.get().replaceFirst(find_value, a.toString());
+            String s = tt.get().replaceFirst(find_value, "" + "*".repeat(len));
             tt.set(s);
             text.selectRange(first, first + len);
 
@@ -256,13 +264,15 @@ public class PrimaryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        saveasB.setDisable(true);
-        saveB.setDisable(true);
         printB.setDisable(true);
         o2pdf.setDisable(true);
-
-
+        copyB.setDisable(true);
+        pasteB.setDisable(true);
+        cutB.setDisable(true);
     }
 
-
+    private Stage getStage() {
+        stage = (Stage) root.getScene().getWindow();
+        return stage;
+    }
 }
