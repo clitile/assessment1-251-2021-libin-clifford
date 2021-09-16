@@ -6,6 +6,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
@@ -63,7 +67,7 @@ public class PrimaryController implements Initializable {
     @FXML
     private TextArea text;
 
-    private String chosen;
+    private String chosen="";
 
     private String extention;
 
@@ -72,35 +76,74 @@ public class PrimaryController implements Initializable {
     @FXML
     void aboutF(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.headerTextProperty().set("Prohibit infringement\n" +
-                "Name:     Libin and Clifford\n" +
-                "Date：   2021-9-15\n" +
+        alert.setTitle("Information Dialog");
+        alert.headerTextProperty().set("The statement:Prohibit infringement\n" +
+                "Name:         Libin and Clifford\n" +
+                "Date：         2021-9-15\n" +
                 "Version:      1.0\n");
+        ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+        alert.getButtonTypes().setAll(buttonTypeCancel);
         alert.showAndWait();
     }
 
     @FXML
     void copyF(ActionEvent event) {
-        chosen=text.getSelectedText();
+        chosen = text.getSelectedText();
+
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent clipboardContent = new ClipboardContent();
+
+        clipboardContent.putString(chosen);
+        clipboard.setContent(clipboardContent);
     }
 
     @FXML
     void cutF(ActionEvent event) {
-        chosen=text.getSelectedText();
-        int a=text.getCaretPosition();
+        chosen = text.getSelectedText();
+        int a = text.getCaretPosition();
         StringBuffer stringBuilder1 = new StringBuffer(text.getText());
-        stringBuilder1.delete(a,a+chosen.length());
+        stringBuilder1.delete(a, a + chosen.length());
         text.setText(stringBuilder1.toString());
+
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent clipboardContent = new ClipboardContent();
+
+        clipboardContent.putString(chosen);
+        clipboard.setContent(clipboardContent);
     }
 
     @FXML
     void pasteF(ActionEvent event) {
-        int a=text.getCaretPosition();
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        if (clipboard.getString() != "") {
+            chosen = clipboard.getString();
+        }
+        int a = text.getCaretPosition();
         StringBuffer stringBuilder1 = new StringBuffer(text.getText());
-        stringBuilder1.insert(a,chosen);
+        stringBuilder1.insert(a, chosen);
         text.setText(stringBuilder1.toString());
     }
 
+    @FXML
+    void cpc(MouseEvent event) {
+
+    }
+    @FXML
+    void apc(MouseEvent event) {
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        if (clipboard.getString() == "" && chosen=="") {
+            pasteB.setDisable(true);
+        }else {
+            pasteB.setDisable(false);
+        }
+        if (text.getSelectedText()==""){
+            copyB.setDisable(true);
+            cutB.setDisable(true);
+        }else {
+            copyB.setDisable(false);
+            cutB.setDisable(false);
+        }
+    }
     @FXML
     void newF(ActionEvent event) {
 
@@ -150,33 +193,46 @@ public class PrimaryController implements Initializable {
     @FXML
     void searchF(ActionEvent event) {
         Stage secondStage = new Stage();
-        TextField find_tf =new TextField();
+        TextField find_tf = new TextField();
         Button find_bu = new Button("Search");
         HBox hbox = new HBox();
-        hbox.getChildren().addAll(find_tf,find_bu);
+        hbox.getChildren().addAll(find_tf, find_bu);
         StackPane secondPane = new StackPane(hbox);
         Scene secondScene = new Scene(secondPane, 250, 50);
         secondStage.getIcons().add(new Image("file:src\\main\\resources\\NZ251\\texteditor\\tu.jpg"));
         secondStage.setScene(secondScene);
         secondStage.show();
-        AtomicReference<String> tt= new AtomicReference<>(text.getText());
-        find_bu.setOnAction(item->{
+        AtomicReference<String> tt = new AtomicReference<>(text.getText());
+        find_bu.setOnAction(item -> {
+            if (tt.get().indexOf(find_tf.getText()) == -1) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.headerTextProperty().set("String does not exist");
+                alert.setTitle("Mistake");
+                ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+                alert.getButtonTypes().setAll(buttonTypeCancel);
+                alert.setWidth(50);
+                alert.setHeight(50);
+                alert.showAndWait();
+            }
             String find_value = find_tf.getText();
-            int len=find_value.length();
-            int first= tt.get().indexOf(find_value);
+            int len = find_value.length();
+            int first = tt.get().indexOf(find_value);
             StringBuilder a = new StringBuilder(new String());
             a.append("*".repeat(len));
-            String s= tt.get().replaceFirst(find_value, a.toString());
+            String s = tt.get().replaceFirst(find_value, a.toString());
             tt.set(s);
-            text.selectRange(first,first+len);
+            text.selectRange(first, first + len);
+
         });
+
     }
 
     @FXML
     void tdF(ActionEvent event) {
         Date date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        text.setText("Date: " + dateFormat.format(date));
+        String s=text.getText()+'\n'+dateFormat.format(date);
+        text.setText(s);
 
     }
 
@@ -204,9 +260,9 @@ public class PrimaryController implements Initializable {
         saveB.setDisable(true);
         printB.setDisable(true);
         o2pdf.setDisable(true);
-        searchB.setDisable(true);
-        cutB.setDisable(true);
-        pasteB.setDisable(true);
-        copyB.setDisable(true);
+
+
     }
+
+
 }
