@@ -1,4 +1,4 @@
-module NZ251.texteditor {
+module NZ.texteditor {
     requires javafx.controls;
     requires javafx.fxml;
 
