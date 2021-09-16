@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NZ251.texteditor.PrimaryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NZ251.texteditor.PrimaryController">
    <children>
       <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="newF" mnemonicParsing="false" onAction="#newF" text="New" />
-                  <MenuItem fx:id="openF" mnemonicParsing="false" onAction="#openF" text="Open" />
-                  <MenuItem fx:id="saveF" mnemonicParsing="false" onAction="#saveF" text="Save" />
+              <MenuItem fx:id="newB" mnemonicParsing="false" onAction="#newF" text="New" />
+                  <MenuItem fx:id="openB" mnemonicParsing="false" onAction="#openF" text="Open" />
+                  <MenuItem fx:id="saveB" mnemonicParsing="false" onAction="#saveF" text="Save" />
+                  <MenuItem fx:id="saveasB" mnemonicParsing="false" onAction="#saveasF" text="Save as" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem fx:id="pringtB" mnemonicParsing="false" onAction="#pringtB" text="print" />
+              <MenuItem fx:id="printB" mnemonicParsing="false" onAction="#printB" text="print" />
                   <MenuItem fx:id="o2pdf" mnemonicParsing="false" onAction="#pdfB" text="2PDF" />
             </items>
           </Menu>
@@ -39,6 +38,9 @@
             </Menu>
         </menus>
       </MenuBar>
-      <TextArea layoutY="27.0" prefHeight="373.0" prefWidth="600.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.399999999999977" />
+      <TextArea fx:id="text" layoutY="27.0" prefHeight="373.0" prefWidth="600.0" style="-fx-background-color: transparent, white, transparent, white;" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.399999999999977">
+         <font>
+            <Font name="Consolas" size="15.0" />
+         </font></TextArea>
    </children>
 </AnchorPane>
