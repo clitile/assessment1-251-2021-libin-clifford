@@ -1,5 +1,7 @@
 package NZ251.texteditor;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,7 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DragEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -21,9 +23,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
-import java.text.FieldPosition;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
@@ -69,6 +69,8 @@ public class PrimaryController implements Initializable {
     private TextArea text;
 
     @FXML
+    private ListView<String> listview;
+    @FXML
     private AnchorPane root;
 
     private String chosen="";
@@ -78,6 +80,9 @@ public class PrimaryController implements Initializable {
     private String abPath;
 
     private Stage stage;
+
+
+
 
     @FXML
     void aboutF(ActionEvent event) {
@@ -131,7 +136,17 @@ public class PrimaryController implements Initializable {
     }
 
     @FXML
-    void cpc(MouseEvent event) {
+    void cpc(KeyEvent event) {
+        String str = text.getText();
+        String[] split = str.split("\n");
+        int len = split.length + 1;
+
+        ObservableList<String> s = FXCollections.observableArrayList();
+        for (int i = 1; i <= len; i++) {
+            String c=String.valueOf(i);
+            s.add(c);
+        }
+        listview.setItems(s);
 
     }
     @FXML
@@ -269,6 +284,7 @@ public class PrimaryController implements Initializable {
         copyB.setDisable(true);
         pasteB.setDisable(true);
         cutB.setDisable(true);
+        text.setWrapText(false);
     }
 
     private Stage getStage() {

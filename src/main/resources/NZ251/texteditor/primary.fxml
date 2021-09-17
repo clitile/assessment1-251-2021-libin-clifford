@@ -38,9 +38,10 @@
             </Menu>
         </menus>
       </MenuBar>
-      <TextArea fx:id="text" layoutY="27.0" onMouseClicked="#apc" prefHeight="373.0" prefWidth="600.0" style="-fx-background-color: transparent, white, transparent, white;" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.399999999999977">
+      <TextArea fx:id="text" layoutX="23.0" layoutY="26.0" onKeyPressed="#cpc" onMouseClicked="#apc" prefHeight="374.0" prefWidth="577.0" style="-fx-background-color: transparent, white, transparent, white;" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
          <font>
             <Font name="Consolas" size="15.0" />
          </font></TextArea>
+      <ListView fx:id="listview" layoutY="26.0" onMouseClicked="#cpc" prefHeight="374.0" prefWidth="23.0" />
    </children>
 </AnchorPane>
