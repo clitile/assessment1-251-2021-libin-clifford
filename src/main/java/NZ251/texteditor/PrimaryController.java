@@ -19,11 +19,15 @@ import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import javax.print.*;
+import javax.print.attribute.HashPrintRequestAttributeSet;
+import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.Copies;
+import java.io.*;
+import java.lang.reflect.InvocationTargetException;
+import java.net.Socket;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -79,7 +83,7 @@ public class PrimaryController implements Initializable {
 
     private String extention;
 
-    private String abPath;
+    private String abPath = "";
 
     private Stage stage;
 
@@ -172,51 +176,75 @@ public class PrimaryController implements Initializable {
                 new FileChooser.ExtensionFilter("*.cpp files (*.cpp)", "*.cpp")
         );
         File file = chooser.showOpenDialog(null);
-        abPath = file.getAbsolutePath();
-        extention = FileOp.getFileExtension(file);
+        if (file!=null){
+            abPath = file.getAbsolutePath();
+            extention = FileOp.getFileExtension(file);
 
-        text.setText(FileOp.readTXT(file));
+            text.setText(FileOp.readTXT(file));
 
-        saveB.setDisable(false);
-        saveasB.setDisable(false);
-        o2pdf.setDisable(false);
-        printB.setDisable(true);
-        stage = getStage();
-        stage.setTitle("Text Editor-" + file.getName());
+            saveB.setDisable(false);
+            saveasB.setDisable(false);
+            o2pdf.setDisable(false);
+            printB.setDisable(false);
+            stage = getStage();
+            stage.setTitle("Text Editor-" + file.getName());
 
-        text.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                System.out.println("changed");
-            }
-        });
+            text.textProperty().addListener(new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                    System.out.println("changed");
+                }
+            });
 
-        font = text.getFont();
+            font = text.getFont();
+            saveB.setDisable(false);
+        }
+
     }
 
     @FXML
-    void pdfB(ActionEvent event) throws DocumentException, IOException {
+    void pdfB(ActionEvent event) throws  IOException, DocumentException {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Save file");
         chooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf")
         );
         File file = chooser.showSaveDialog(null);
-        FileOp.O2PDF(text.getText(), file, font);
+        if (file != null) {
+            FileOp.O2PDF(text.getText(), file, font);
+        }
+
+
     }
 
     @FXML
-    void printB(ActionEvent event) {
-        //TODO
+    void printB(ActionEvent event) throws Exception {
+//        InputStream inputStream = null;
+//        try{
+//            inputStream=new FileInputStream("C:\\Users\\wwei\\Desktop\\s.png");
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//        PrintDemo pd=new PrintDemo();
+//        pd.printQRCode(inputStream);//打印方法
+        InputStream inputStream=new ByteArrayInputStream(text.getText().getBytes(StandardCharsets.UTF_8));
+        PrintDemo printDemo=new PrintDemo();
+        printDemo.printQRCode(inputStream);
+
     }
 
+
     @FXML
-    void saveF(ActionEvent event) throws IOException {
-        File f = new File(abPath);
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(f));
+    void saveF(ActionEvent event) throws IOException,NullPointerException{
         String txt = text.getText();
-        bufferedWriter.write(txt);
-        bufferedWriter.close();
+
+        if (txt!=null && !abPath.equals("")) {
+            File f = new File(abPath);
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(f));
+            bufferedWriter.write(txt);
+            bufferedWriter.close();
+        }
+
     }
 
     @FXML
@@ -264,28 +292,30 @@ public class PrimaryController implements Initializable {
 
     @FXML
     void saveasF(ActionEvent event) throws IOException {
-        FileChooser chooser = new FileChooser();
-        chooser.setTitle("Save file");
-        chooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt"),
-                new FileChooser.ExtensionFilter("All files (*.*)", "*.*"),
-                new FileChooser.ExtensionFilter(".py files (*.py)", "*.py"),
-                new FileChooser.ExtensionFilter("*.java files (*.java)", "*.java"),
-                new FileChooser.ExtensionFilter("*.cpp files (*.cpp)", "*.cpp")
-        );
-        File file = chooser.showSaveDialog(null);
-        if (file != null) {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
-            String txt = text.getText();
-            bufferedWriter.write(txt);
-            bufferedWriter.close();
-        }
+
+            FileChooser chooser = new FileChooser();
+            chooser.setTitle("Save file");
+            chooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt"),
+                    new FileChooser.ExtensionFilter("All files (*.*)", "*.*"),
+                    new FileChooser.ExtensionFilter(".py files (*.py)", "*.py"),
+                    new FileChooser.ExtensionFilter("*.java files (*.java)", "*.java"),
+                    new FileChooser.ExtensionFilter("*.cpp files (*.cpp)", "*.cpp")
+            );
+            File file = chooser.showSaveDialog(null);
+            if (file != null) {
+                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+                String txt = text.getText();
+                bufferedWriter.write(txt);
+                bufferedWriter.close();
+            }
+
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        printB.setDisable(true);
-        o2pdf.setDisable(true);
+        saveB.setDisable(true);
+
         copyB.setDisable(true);
         pasteB.setDisable(true);
         cutB.setDisable(true);
