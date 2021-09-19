@@ -73,8 +73,6 @@ public class PrimaryController implements Initializable {
     private TextArea text;
 
     @FXML
-    private ListView<String> listview;
-    @FXML
     private AnchorPane root;
 
     private String chosen="";
