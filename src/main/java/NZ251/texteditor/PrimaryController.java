@@ -1,5 +1,8 @@
 package NZ251.texteditor;
 
+import com.itextpdf.text.DocumentException;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,13 +11,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -24,9 +25,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PrimaryController implements Initializable {
     @FXML
@@ -81,8 +85,7 @@ public class PrimaryController implements Initializable {
 
     private Stage stage;
 
-
-
+    public static Font font;
 
     @FXML
     void aboutF(ActionEvent event) {
@@ -136,29 +139,17 @@ public class PrimaryController implements Initializable {
     }
 
     @FXML
-    void cpc(KeyEvent event) {
-        String str = text.getText();
-        String[] split = str.split("\n");
-        int len = split.length + 1;
-
-        ObservableList<String> s = FXCollections.observableArrayList();
-        for (int i = 1; i <= len; i++) {
-            String c=String.valueOf(i);
-            s.add(c);
-        }
-        listview.setItems(s);
-
-    }
-    @FXML
     void apc(MouseEvent event) {
         Clipboard clipboard = Clipboard.getSystemClipboard();
-        pasteB.setDisable(clipboard.getString().equals("") && chosen.equals(""));
-        if (text.getSelectedText().equals("")){
-            copyB.setDisable(true);
-            cutB.setDisable(true);
-        }else {
-            copyB.setDisable(false);
-            cutB.setDisable(false);
+        if (clipboard.getString() != null) {
+            pasteB.setDisable(clipboard.getString().equals("") && chosen.equals(""));
+            if (text.getSelectedText().equals("")){
+                copyB.setDisable(true);
+                cutB.setDisable(true);
+            }else {
+                copyB.setDisable(false);
+                cutB.setDisable(false);
+            }
         }
     }
 
@@ -185,25 +176,40 @@ public class PrimaryController implements Initializable {
         File file = chooser.showOpenDialog(null);
         abPath = file.getAbsolutePath();
         extention = FileOp.getFileExtension(file);
-        if (extention.equals(".txt")) {
-            text.setText(FileOp.readTXT(file));
-        }
+
+        text.setText(FileOp.readTXT(file));
+
         saveB.setDisable(false);
         saveasB.setDisable(false);
         o2pdf.setDisable(false);
         printB.setDisable(true);
         stage = getStage();
         stage.setTitle("Text Editor-" + file.getName());
+
+        text.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                System.out.println("changed");
+            }
+        });
+
+        font = text.getFont();
     }
 
     @FXML
-    void pdfB(ActionEvent event) {
-
+    void pdfB(ActionEvent event) throws DocumentException, IOException {
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Save file");
+        chooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf")
+        );
+        File file = chooser.showSaveDialog(null);
+        FileOp.O2PDF(text.getText(), file, font);
     }
 
     @FXML
     void printB(ActionEvent event) {
-        
+        //TODO
     }
 
     @FXML
@@ -245,7 +251,6 @@ public class PrimaryController implements Initializable {
             String s = tt.get().replaceFirst(find_value, "" + "*".repeat(len));
             tt.set(s);
             text.selectRange(first, first + len);
-
         });
 
     }
@@ -285,6 +290,8 @@ public class PrimaryController implements Initializable {
         pasteB.setDisable(true);
         cutB.setDisable(true);
         text.setWrapText(false);
+
+        font = text.getFont();
     }
 
     private Stage getStage() {
