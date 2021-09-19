@@ -276,10 +276,12 @@ public class PrimaryController implements Initializable {
                 new FileChooser.ExtensionFilter("*.cpp files (*.cpp)", "*.cpp")
         );
         File file = chooser.showSaveDialog(null);
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
-        String txt = text.getText();
-        bufferedWriter.write(txt);
-        bufferedWriter.close();
+        if (file != null) {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+            String txt = text.getText();
+            bufferedWriter.write(txt);
+            bufferedWriter.close();
+        }
     }
 
     @Override
