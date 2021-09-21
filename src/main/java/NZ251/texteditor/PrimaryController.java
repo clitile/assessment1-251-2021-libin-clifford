@@ -1,6 +1,8 @@
 package NZ251.texteditor;
 
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfDocument;
+import com.itextpdf.text.pdf.PdfWriter;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -19,22 +21,26 @@ import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.awt.print.*;
 import javax.print.*;
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
 import javax.print.attribute.standard.Copies;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Type;
 import java.net.Socket;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static NZ251.texteditor.FileOp.pdf2images;
+
 
 public class PrimaryController implements Initializable {
     @FXML
@@ -45,6 +51,12 @@ public class PrimaryController implements Initializable {
 
     @FXML
     private MenuItem saveB;
+
+    @FXML
+    private MenuItem undo;
+
+    @FXML
+    private MenuItem restore;
 
     @FXML
     private MenuItem printB;
@@ -88,6 +100,7 @@ public class PrimaryController implements Initializable {
     private Stage stage;
 
     public static Font font;
+    public static String t = "";
 
     @FXML
     void aboutF(ActionEvent event) {
@@ -140,9 +153,49 @@ public class PrimaryController implements Initializable {
         text.setText(stringBuilder1.toString());
     }
 
+    //按键判断没做
+    int nowposition=0;
+    ArrayList<String> alltxt=new ArrayList<>();
+    @FXML
+    void spc(KeyEvent event) {
+        if (nowposition==0){
+            alltxt.add(text.getText());
+            nowposition=nowposition+1;
+        }
+        if (text.getText()!=""){
+            if (alltxt.get(nowposition-1).equals(text.getText())==false){
+                alltxt.add(text.getText());
+                nowposition=nowposition+1;
+            }
+
+        }
+
+    }
+    @FXML
+    void undoaction(ActionEvent actionEvent) {
+        nowposition=nowposition-1;
+        text.setText(alltxt.get(nowposition));
+    }
+    @FXML
+    void  restoreaction(ActionEvent actionEvent) {
+        nowposition=nowposition+1;
+        text.setText(alltxt.get(nowposition));
+    }
     @FXML
     void apc(MouseEvent event) {
         Clipboard clipboard = Clipboard.getSystemClipboard();
+        if (text.getText()!="" && alltxt.get(nowposition-1).equals(text.getText())==false){
+            alltxt.add(text.getText());
+            nowposition=nowposition+1;
+        }
+        if (alltxt.size()!=0){
+            undo.setDisable(false);
+        }
+        if (alltxt.size()>nowposition){
+            restore.setDisable(false);
+        }else{
+            restore.setDisable(true);
+        }
         if (clipboard.getString() != null) {
             pasteB.setDisable(clipboard.getString().equals("") && chosen.equals(""));
             if (text.getSelectedText().equals("")){
@@ -180,59 +233,76 @@ public class PrimaryController implements Initializable {
             abPath = file.getAbsolutePath();
             extention = FileOp.getFileExtension(file);
 
-            text.setText(FileOp.readTXT(file));
+            if (extention.equals(".txt")) {
+                text.setText(FileOp.readTXT(file));
 
-            saveB.setDisable(false);
-            saveasB.setDisable(false);
-            o2pdf.setDisable(false);
-            printB.setDisable(false);
-            stage = getStage();
-            stage.setTitle("Text Editor-" + file.getName());
+                saveB.setDisable(false);
+                saveasB.setDisable(false);
+                o2pdf.setDisable(false);
+                printB.setDisable(false);
+                stage = getStage();
+                stage.setTitle("Text Editor-" + file.getName());
 
-            text.textProperty().addListener(new ChangeListener<String>() {
-                @Override
-                public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                    System.out.println("changed");
-                }
-            });
+                text.textProperty().addListener(new ChangeListener<String>() {
+                    @Override
+                    public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                        System.out.println("changed");
+                    }
+                });
 
-            font = text.getFont();
-            saveB.setDisable(false);
+                font = text.getFont();
+                saveB.setDisable(false);
+            } else if (extention.equals(".java")) {
+                SecondaryController.t = FileOp.readTXT(file);
+                App.setRoot("secondary");
+            }
         }
-
     }
 
     @FXML
     void pdfB(ActionEvent event) throws  IOException, DocumentException {
-        FileChooser chooser = new FileChooser();
-        chooser.setTitle("Save file");
-        chooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf")
-        );
-        File file = chooser.showSaveDialog(null);
-        if (file != null) {
-            FileOp.O2PDF(text.getText(), file, font);
+        if (text.getText()!=""){
+            FileChooser chooser = new FileChooser();
+            chooser.setTitle("Save file");
+            chooser.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf")
+            );
+            File file = chooser.showSaveDialog(null);
+            if (file != null) {
+                FileOp.O2PDF(text.getText(), file, font);
+            }
+        }else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.headerTextProperty().set("There is no input");
+            ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+            alert.getButtonTypes().setAll(buttonTypeCancel);
+            alert.showAndWait();
         }
-
 
     }
 
     @FXML
     void printB(ActionEvent event) throws Exception {
-//        InputStream inputStream = null;
-//        try{
-//            inputStream=new FileInputStream("C:\\Users\\wwei\\Desktop\\s.png");
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//        PrintDemo pd=new PrintDemo();
-//        pd.printQRCode(inputStream);//打印方法
-        InputStream inputStream=new ByteArrayInputStream(text.getText().getBytes(StandardCharsets.UTF_8));
-        PrintDemo printDemo=new PrintDemo();
-        printDemo.printQRCode(inputStream);
+        if (text.getText()!=""){
+            FileOp.O2PDF(text.getText(), new File("src\\main\\java\\NZ251\\texteditor\\a.pdf"), font);
+            testPdf2images();
+            InputStream inputStream = new FileInputStream("src\\main\\java\\NZ251\\texteditor\\a.png");;
+            PrintDemo pd=new PrintDemo();
+            pd.printQRCode(inputStream);
+        }else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.headerTextProperty().set("There is no input");
+            ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+            alert.getButtonTypes().setAll(buttonTypeCancel);
+            alert.showAndWait();
+        }
 
     }
+    public void topng(ActionEvent actionEvent) {
 
+    }
 
     @FXML
     void saveF(ActionEvent event) throws IOException,NullPointerException{
@@ -315,7 +385,9 @@ public class PrimaryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         saveB.setDisable(true);
-
+        abPath = System.getProperty("user.dir");
+        undo.setDisable(true);
+        restore.setDisable(true);
         copyB.setDisable(true);
         pasteB.setDisable(true);
         cutB.setDisable(true);
@@ -328,4 +400,14 @@ public class PrimaryController implements Initializable {
         stage = (Stage) root.getScene().getWindow();
         return stage;
     }
+
+    private void testPdf2images() throws Exception {
+        List<byte[]> images = pdf2images(new File("src\\main\\java\\NZ251\\texteditor\\a.pdf"));
+        AtomicInteger fileNameIndex = new AtomicInteger(1);
+        for (byte[] image : images) {
+            new ByteArrayInputStream(image).transferTo(new FileOutputStream("src\\main\\java\\NZ251\\texteditor\\" + "a.png"));
+        }
+    }
+
+
 }

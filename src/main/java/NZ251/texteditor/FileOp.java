@@ -6,9 +6,17 @@ import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import javafx.scene.text.Font;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.rendering.PDFRenderer;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class FileOp {
     public static boolean changeFlag = false;
@@ -45,4 +53,24 @@ public class FileOp {
         document.add(new Paragraph(content, FontFactory.getFont(String.valueOf(font))));
         document.close();
     }
+
+    public static List<byte[]> pdf2images(File pdfFile) throws Exception {
+        //加载PDF
+        PDDocument pdDocument = PDDocument.load(pdfFile);
+        //创建PDF渲染器
+        PDFRenderer renderer = new PDFRenderer(pdDocument);
+        int pages = pdDocument.getNumberOfPages();
+        List<byte[]> images = new ArrayList<>();
+        for (int i = 0; i < pages; i++) {
+            ByteArrayOutputStream output = new ByteArrayOutputStream();
+            //将PDF的每一页渲染成一张图片
+            BufferedImage image = renderer.renderImage(i);
+            ImageIO.write(image, "png", output);
+            images.add(output.toByteArray());
+        }
+        pdDocument.close();
+        return images;
+    }
+
+
 }

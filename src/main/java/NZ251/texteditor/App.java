@@ -23,7 +23,14 @@ public class App extends Application {
         stage.setScene(scene);
         stage.setTitle("Text Editor");
         stage.getIcons().add(new Image("file:src\\main\\resources\\NZ251\\texteditor\\tu.jpg"));
+        scene.getStylesheets().add("src\\main\\java\\resources\\style\\style.css");
         stage.show();
+    }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+        System.exit(0);
     }
 
     public static void setRoot(String fxml) throws IOException {
