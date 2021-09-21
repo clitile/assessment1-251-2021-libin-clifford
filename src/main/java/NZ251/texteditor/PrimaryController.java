@@ -3,8 +3,6 @@ package NZ251.texteditor;
 import com.itextpdf.text.DocumentException;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,22 +17,13 @@ import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import javax.print.*;
-import javax.print.attribute.HashPrintRequestAttributeSet;
-import javax.print.attribute.PrintRequestAttributeSet;
-import javax.print.attribute.standard.Copies;
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
-import java.net.Socket;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class PrimaryController implements Initializable {
     @FXML
@@ -88,6 +77,7 @@ public class PrimaryController implements Initializable {
     private Stage stage;
 
     public static Font font;
+    public static String t = "";
 
     @FXML
     void aboutF(ActionEvent event) {
@@ -180,26 +170,30 @@ public class PrimaryController implements Initializable {
             abPath = file.getAbsolutePath();
             extention = FileOp.getFileExtension(file);
 
-            text.setText(FileOp.readTXT(file));
+            if (extention.equals(".txt")) {
+                text.setText(FileOp.readTXT(file));
 
-            saveB.setDisable(false);
-            saveasB.setDisable(false);
-            o2pdf.setDisable(false);
-            printB.setDisable(false);
-            stage = getStage();
-            stage.setTitle("Text Editor-" + file.getName());
+                saveB.setDisable(false);
+                saveasB.setDisable(false);
+                o2pdf.setDisable(false);
+                printB.setDisable(false);
+                stage = getStage();
+                stage.setTitle("Text Editor-" + file.getName());
 
-            text.textProperty().addListener(new ChangeListener<String>() {
-                @Override
-                public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                    System.out.println("changed");
-                }
-            });
+                text.textProperty().addListener(new ChangeListener<String>() {
+                    @Override
+                    public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                        System.out.println("changed");
+                    }
+                });
 
-            font = text.getFont();
-            saveB.setDisable(false);
+                font = text.getFont();
+                saveB.setDisable(false);
+            } else if (extention.equals(".java")) {
+                SecondaryController.t = FileOp.readTXT(file);
+                App.setRoot("secondary");
+            }
         }
-
     }
 
     @FXML
@@ -213,8 +207,6 @@ public class PrimaryController implements Initializable {
         if (file != null) {
             FileOp.O2PDF(text.getText(), file, font);
         }
-
-
     }
 
     @FXML
@@ -233,7 +225,6 @@ public class PrimaryController implements Initializable {
 
     }
 
-
     @FXML
     void saveF(ActionEvent event) throws IOException,NullPointerException{
         String txt = text.getText();
@@ -244,7 +235,6 @@ public class PrimaryController implements Initializable {
             bufferedWriter.write(txt);
             bufferedWriter.close();
         }
-
     }
 
     @FXML
@@ -278,7 +268,6 @@ public class PrimaryController implements Initializable {
             tt.set(s);
             text.selectRange(first, first + len);
         });
-
     }
 
     @FXML
@@ -287,12 +276,10 @@ public class PrimaryController implements Initializable {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String s=text.getText()+'\n'+dateFormat.format(date);
         text.setText(s);
-
     }
 
     @FXML
     void saveasF(ActionEvent event) throws IOException {
-
             FileChooser chooser = new FileChooser();
             chooser.setTitle("Save file");
             chooser.getExtensionFilters().addAll(
@@ -309,7 +296,6 @@ public class PrimaryController implements Initializable {
                 bufferedWriter.write(txt);
                 bufferedWriter.close();
             }
-
     }
 
     @Override
@@ -320,6 +306,7 @@ public class PrimaryController implements Initializable {
         pasteB.setDisable(true);
         cutB.setDisable(true);
         text.setWrapText(false);
+        text.setText(t);
 
         font = text.getFont();
     }
