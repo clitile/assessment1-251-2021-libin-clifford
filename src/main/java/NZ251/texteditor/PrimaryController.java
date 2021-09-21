@@ -1,12 +1,8 @@
 package NZ251.texteditor;
 
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.pdf.PdfDocument;
-import com.itextpdf.text.pdf.PdfWriter;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,23 +17,12 @@ import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.awt.print.*;
-import javax.print.*;
-import javax.print.attribute.HashPrintRequestAttributeSet;
-import javax.print.attribute.PrintRequestAttributeSet;
-import javax.print.attribute.standard.Copies;
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Type;
-import java.net.Socket;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static NZ251.texteditor.FileOp.pdf2images;
 
@@ -167,20 +152,21 @@ public class PrimaryController implements Initializable {
                 alltxt.add(text.getText());
                 nowposition=nowposition+1;
             }
-
         }
-
     }
+
     @FXML
     void undoaction(ActionEvent actionEvent) {
         nowposition=nowposition-1;
         text.setText(alltxt.get(nowposition));
     }
+
     @FXML
     void  restoreaction(ActionEvent actionEvent) {
         nowposition=nowposition+1;
         text.setText(alltxt.get(nowposition));
     }
+
     @FXML
     void apc(MouseEvent event) {
         Clipboard clipboard = Clipboard.getSystemClipboard();
@@ -279,7 +265,6 @@ public class PrimaryController implements Initializable {
             alert.getButtonTypes().setAll(buttonTypeCancel);
             alert.showAndWait();
         }
-
     }
 
     @FXML
@@ -298,10 +283,10 @@ public class PrimaryController implements Initializable {
             alert.getButtonTypes().setAll(buttonTypeCancel);
             alert.showAndWait();
         }
-
     }
-    public void topng(ActionEvent actionEvent) {
 
+    public void topng(ActionEvent actionEvent) {
+        //TODO
     }
 
     @FXML
@@ -408,6 +393,4 @@ public class PrimaryController implements Initializable {
             new ByteArrayInputStream(image).transferTo(new FileOutputStream("src\\main\\java\\NZ251\\texteditor\\" + "a.png"));
         }
     }
-
-
 }

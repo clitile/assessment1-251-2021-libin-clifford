@@ -12,11 +12,8 @@ import org.apache.pdfbox.rendering.PDFRenderer;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class FileOp {
     public static boolean changeFlag = false;
@@ -39,10 +36,6 @@ public class FileOp {
             stringBuffer.append(new String(bytes, 0, len));
         }
         return stringBuffer.toString();
-    }
-
-    public static void printFile(String path) {
-        //TODO
     }
 
     public static void O2PDF (String content, File outfile, Font font) throws IOException, DocumentException {
@@ -71,6 +64,4 @@ public class FileOp {
         pdDocument.close();
         return images;
     }
-
-
 }

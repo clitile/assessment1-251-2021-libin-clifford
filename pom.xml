@@ -21,6 +21,7 @@
             <artifactId>richtextfx</artifactId>
             <version>0.10.6</version>
         </dependency>
+
         <dependency>
             <groupId>org.fxmisc.flowless</groupId>
             <artifactId>flowless</artifactId>

@@ -6,6 +6,7 @@ module NZ.texteditor {
     requires org.apache.pdfbox;
     requires org.fxmisc.richtext;
     requires reactfx;
+
     opens NZ251.texteditor to javafx.fxml;
     exports NZ251.texteditor;
 }
