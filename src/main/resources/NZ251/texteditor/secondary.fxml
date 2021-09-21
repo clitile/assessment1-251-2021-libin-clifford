@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.fxmisc.richtext.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NZ251.texteditor.SecondaryController">
-    <children>
-        <Label text="Secondary View" />
-        <Button fx:id="secondaryButton" text="Switch to Primary View" onAction="#switchToPrimary" />
-    </children>
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-</VBox>
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NZ251.texteditor.SecondaryController">
+    <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem fx:id="newB" mnemonicParsing="false" onAction="#newF" text="New" />
+            <MenuItem fx:id="openB" mnemonicParsing="false" onAction="#openF" text="Open" />
+            <MenuItem fx:id="saveB" mnemonicParsing="false" onAction="#saveF" text="Save" />
+            <MenuItem fx:id="saveasB" mnemonicParsing="false" onAction="#saveasF" text="Save as" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+            <MenuItem fx:id="printB" mnemonicParsing="false" onAction="#printB" text="print" />
+            <MenuItem fx:id="o2pdf" mnemonicParsing="false" onAction="#pdfB" text="2PDF" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Tools">
+            <MenuItem fx:id="searchB" mnemonicParsing="false" onAction="#searchF" text="Search" />
+            <MenuItem fx:id="copyB" mnemonicParsing="false" onAction="#copyF" text="Copy" />
+            <MenuItem fx:id="pasteB" mnemonicParsing="false" onAction="#pasteF" text="Paste" />
+            <MenuItem fx:id="cutB" mnemonicParsing="false" onAction="#cutF" text="Cut" />
+            <MenuItem fx:id="tdB" mnemonicParsing="false" onAction="#tdF" text="Time/Date" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <MenuItem fx:id="aboutB" mnemonicParsing="false" onAction="#aboutF" text="About" />
+        </Menu>
+    </MenuBar>
+   <AnchorPane layoutX="112.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+      <children>
+         <CodeArea fx:id="text" onMouseClicked="#apc" prefHeight="374.0" prefWidth="586.0" stylesheets="@../../style/java.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      </children>
+   </AnchorPane>
+</AnchorPane>
