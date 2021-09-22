@@ -238,8 +238,9 @@ public class PrimaryController implements Initializable {
 
                 font = text.getFont();
                 saveB.setDisable(false);
-            } else if (extention.equals(".java")) {
+            } else if (extention.equals(".java") || extention.equals(".py") || extention.equals(".cpp")) {
                 SecondaryController.t = FileOp.readTXT(file);
+                SecondaryController.extention = extention;
                 App.setRoot("secondary");
             }
         }
@@ -247,7 +248,7 @@ public class PrimaryController implements Initializable {
 
     @FXML
     void pdfB(ActionEvent event) throws  IOException, DocumentException {
-        if (text.getText()!=""){
+        if (!Objects.equals(text.getText(), "")){
             FileChooser chooser = new FileChooser();
             chooser.setTitle("Save file");
             chooser.getExtensionFilters().addAll(
@@ -269,7 +270,7 @@ public class PrimaryController implements Initializable {
 
     @FXML
     void printB(ActionEvent event) throws Exception {
-        if (text.getText()!=""){
+        if (!Objects.equals(text.getText(), "")){
             FileOp.O2PDF(text.getText(), new File("src\\main\\java\\NZ251\\texteditor\\a.pdf"), font);
             testPdf2images();
             InputStream inputStream = new FileInputStream("src\\main\\java\\NZ251\\texteditor\\a.png");;
