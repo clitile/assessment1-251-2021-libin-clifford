@@ -8,7 +8,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 /**
  * JavaFX App
@@ -23,7 +22,6 @@ public class App extends Application {
         stage.setScene(scene);
         stage.setTitle("Text Editor");
         stage.getIcons().add(new Image("file:src\\main\\resources\\NZ251\\texteditor\\tu.jpg"));
-        scene.getStylesheets().add("src\\main\\java\\resources\\style\\style.css");
         stage.show();
     }
 
