@@ -35,7 +35,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+import static NZ251.texteditor.CodeKeyWord.PATTERN;
 
 public class SecondaryController implements Initializable {
     @FXML
@@ -82,7 +83,7 @@ public class SecondaryController implements Initializable {
 
     private String chosen="";
 
-    private String extention;
+    public static String extention = "";
 
     private String abPath = "";
 
@@ -91,38 +92,7 @@ public class SecondaryController implements Initializable {
     public static Font font;
     public static String t = "";
     private ExecutorService executor;
-
-    private static final String[] KEYWORDS = new String[] {
-            "abstract", "assert", "boolean", "break", "byte",
-            "case", "catch", "char", "class", "const",
-            "continue", "default", "do", "double", "else",
-            "enum", "extends", "final", "finally", "float",
-            "for", "goto", "if", "implements", "import",
-            "instanceof", "int", "interface", "long", "native",
-            "new", "package", "private", "protected", "public",
-            "return", "short", "static", "strictfp", "super",
-            "switch", "synchronized", "this", "throw", "throws",
-            "transient", "try", "void", "volatile", "while"
-    };
-
-    private static final String KEYWORD_PATTERN = "\\b(" + String.join("|", KEYWORDS) + ")\\b";
-    private static final String PAREN_PATTERN = "\\(|\\)";
-    private static final String BRACE_PATTERN = "\\{|\\}";
-    private static final String BRACKET_PATTERN = "\\[|\\]";
-    private static final String SEMICOLON_PATTERN = "\\;";
-    private static final String STRING_PATTERN = "\"([^\"\\\\]|\\\\.)*\"";
-    private static final String COMMENT_PATTERN = "//[^\n]*" + "|" + "/\\*(.|\\R)*?\\*/"   // for whole text processing (text blocks)
-            + "|" + "/\\*[^\\v]*" + "|" + "^\\h*\\*([^\\v]*|/)";  // for visible paragraph processing (line by line)
-
-    private static final Pattern PATTERN = Pattern.compile(
-            "(?<KEYWORD>" + KEYWORD_PATTERN + ")"
-                    + "|(?<PAREN>" + PAREN_PATTERN + ")"
-                    + "|(?<BRACE>" + BRACE_PATTERN + ")"
-                    + "|(?<BRACKET>" + BRACKET_PATTERN + ")"
-                    + "|(?<SEMICOLON>" + SEMICOLON_PATTERN + ")"
-                    + "|(?<STRING>" + STRING_PATTERN + ")"
-                    + "|(?<COMMENT>" + COMMENT_PATTERN + ")"
-    );
+    public static String[] KEYWORDS;
 
     private StyleSpans<Collection<String>> computeHighlighting(String text) {
         Matcher matcher = PATTERN.matcher(text);
@@ -147,34 +117,24 @@ public class SecondaryController implements Initializable {
         return spansBuilder.create();
     }
 
-    private class DefaultContextMenu extends ContextMenu
-    {
-        private MenuItem fold, unfold, print;
+    private static class DefaultContextMenu extends ContextMenu {
+        public DefaultContextMenu() {
+            MenuItem fold = new MenuItem("Fold selected text");
+            fold.setOnAction(AE -> { hide(); fold(); } );
 
-        public DefaultContextMenu()
-        {
-            fold = new MenuItem( "Fold selected text" );
-            fold.setOnAction( AE -> { hide(); fold(); } );
+            MenuItem unfold = new MenuItem("Unfold from cursor");
+            unfold.setOnAction(AE -> { hide(); unfold(); } );
 
-            unfold = new MenuItem( "Unfold from cursor" );
-            unfold.setOnAction( AE -> { hide(); unfold(); } );
+            MenuItem print = new MenuItem("Print");
+            print.setOnAction(AE -> { hide(); print(); } );
 
-            print = new MenuItem( "Print" );
-            print.setOnAction( AE -> { hide(); print(); } );
-
-            getItems().addAll( fold, unfold, print );
+            getItems().addAll(fold, unfold, print);
         }
 
-        /**
-         * Folds multiple lines of selected text, only showing the first line and hiding the rest.
-         */
         private void fold() {
             ((CodeArea) getOwnerNode()).foldSelectedParagraphs();
         }
 
-        /**
-         * Unfold the CURRENT line/paragraph if it has a fold.
-         */
         private void unfold() {
             CodeArea area = (CodeArea) getOwnerNode();
             area.unfoldParagraphs( area.getCurrentParagraph() );
@@ -416,6 +376,18 @@ public class SecondaryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ReadYAML readYAML = new ReadYAML("src/main/resources/conf/key.yaml");
+        switch (extention) {
+            case ".java":
+                KEYWORDS = readYAML.properties.get("JAVA_KEYWORD").toArray(new String[0]);
+                break;
+            case ".py":
+                KEYWORDS = readYAML.properties.get("PYTHON_KEYWORD").toArray(new String[0]);
+                break;
+            case ".cpp":
+                KEYWORDS = readYAML.properties.get("CPP_KEYWORD").toArray(new String[0]);
+                break;
+        }
         saveB.setDisable(true);
 
         copyB.setDisable(true);
@@ -425,7 +397,7 @@ public class SecondaryController implements Initializable {
         executor = Executors.newSingleThreadExecutor();
 
         text.setParagraphGraphicFactory(LineNumberFactory.get(text));
-        text.setContextMenu( new DefaultContextMenu() );
+        text.setContextMenu(new DefaultContextMenu());
 
         Subscription cleanupWhenDone = text.multiPlainChanges()
                 .successionEnds(Duration.ofMillis(500))
