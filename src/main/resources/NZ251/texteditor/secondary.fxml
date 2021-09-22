@@ -28,9 +28,6 @@
         </Menu>
     </MenuBar>
     <AnchorPane layoutX="112.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
-        <children>
-            <CodeArea fx:id="text" onMouseClicked="#apc" prefHeight="374.0" prefWidth="586.0" stylesheets="@../../style/java.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-        </children>
+        <CodeArea fx:id="text" onMouseClicked="#apc" prefHeight="374.0" prefWidth="586.0" stylesheets="@../../style/java.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
     </AnchorPane>
 </AnchorPane>
-
