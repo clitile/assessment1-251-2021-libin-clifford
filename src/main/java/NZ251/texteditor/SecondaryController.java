@@ -415,5 +415,11 @@ public class SecondaryController implements Initializable {
 
         text.replaceText(0, 0, t);
         text.getCaretPosition();
+        text.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                saveB.setDisable(false);
+            }
+        });
     }
 }
