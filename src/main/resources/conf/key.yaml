@@ -1,0 +1,25 @@
+JAVA_KEYWORD: ['abstract', 'assert', 'boolean', 'break', 'byte',
+               'case', 'catch', 'char', 'class', 'const',
+               'continue', 'default', 'do', 'double', 'else',
+               'enum', 'extends', 'final', 'finally', 'float',
+               'for', 'goto', 'if', 'implements', 'import',
+               'instanceof', 'int', 'interface', 'long', 'native',
+               'new', 'package', 'private', 'protected', 'public',
+               'return', 'short', 'static', 'strictfp', 'super',
+               'switch', 'synchronized', 'this', 'throw', 'throws',
+               'transient', 'try', 'void', 'volatile', 'while']
+
+PYTHON_KEYWORD: ['and', 'as', 'assert', 'break', 'class', 'continue',
+                 'def', 'del', 'elif', 'else', 'except', 'finally',
+                 'for', 'from', 'False', 'global', 'if', 'import',
+                 'in', 'is', 'lambda', 'nonlocal', 'not', 'None',
+                 'or', 'pass', 'raise', 'return', 'try', 'True',
+                 'while', 'with', 'yield', 'print']
+
+CPP_KEYWORD: ['if', 'else', 'while', 'signed', 'throw', 'union', 'this',
+              'int', 'char', 'double', 'unsigned', 'const', 'goto', 'virtual',
+              'for', 'float', 'break', 'auto', 'class', 'operator', 'case',
+              'do', 'long', 'typedef', 'static', 'friend', 'template', 'default',
+              'new', 'void', 'register', 'extern', 'return', 'enum', 'inline',
+              'try', 'short', 'continue', 'sizeof', 'switch', 'private', 'protected',
+              'asm', 'while', 'catch', 'delete', 'public', 'volatile', 'struct']
