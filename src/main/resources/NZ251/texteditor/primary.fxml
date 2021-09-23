@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NZ251.texteditor.PrimaryController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../style/style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NZ251.texteditor.PrimaryController">
     <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
         <Menu mnemonicParsing="false" text="File">
             <MenuItem fx:id="newB" mnemonicParsing="false" onAction="#newF" text="New" />
@@ -15,7 +15,6 @@
         <Menu mnemonicParsing="false" text="Edit">
             <MenuItem fx:id="printB" mnemonicParsing="false" onAction="#printB" text="To Printer" />
             <MenuItem fx:id="o2pdf" mnemonicParsing="false" onAction="#pdfB" text="To PDF" />
-            <MenuItem mnemonicParsing="false" onAction="#topng" text="To PNG" />
         </Menu>
         <Menu mnemonicParsing="false" text="Tools">
             <MenuItem fx:id="searchB" mnemonicParsing="false" onAction="#searchF" text="Search" />
@@ -30,7 +29,7 @@
             <MenuItem fx:id="aboutB" mnemonicParsing="false" onAction="#aboutF" text="About" />
         </Menu>
     </MenuBar>
-    <TextArea fx:id="text" layoutY="26.0" onKeyPressed="#spc" onMouseClicked="#apc" prefHeight="374.0" prefWidth="600.0" stylesheets="@../../style/style.css" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+    <TextArea fx:id="text" layoutY="26.0" onKeyPressed="#spc" onMouseClicked="#apc" prefHeight="374.0" prefWidth="600.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
         <font>
           <Font name="Consolas" size="15.0" />
         </font>

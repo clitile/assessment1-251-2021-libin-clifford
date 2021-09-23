@@ -285,11 +285,6 @@ public class PrimaryController implements Initializable {
             alert.showAndWait();
         }
     }
-
-    public void topng(ActionEvent actionEvent) {
-        //TODO
-    }
-
     @FXML
     void saveF(ActionEvent event) throws IOException,NullPointerException{
         String txt = text.getText();
