@@ -29,7 +29,7 @@
             <MenuItem fx:id="aboutB" mnemonicParsing="false" onAction="#aboutF" text="About" />
         </Menu>
     </MenuBar>
-    <TextArea fx:id="text" layoutY="26.0" onKeyPressed="#spc" onMouseClicked="#apc" prefHeight="374.0" prefWidth="600.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+    <TextArea fx:id="text" layoutY="26.0" onKeyPressed="#spc" onMouseClicked="#apc" prefHeight="374.0" prefWidth="600.0" stylesheets="@../../style/style.css" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
         <font>
           <Font name="Consolas" size="15.0" />
         </font>
