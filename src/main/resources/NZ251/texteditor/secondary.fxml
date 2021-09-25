@@ -13,14 +13,16 @@
             <MenuItem fx:id="saveasB" mnemonicParsing="false" onAction="#saveasF" text="Save as" />
         </Menu>
         <Menu mnemonicParsing="false" text="Edit">
-            <MenuItem fx:id="printB" mnemonicParsing="false" onAction="#printB" text="print" />
-            <MenuItem fx:id="o2pdf" mnemonicParsing="false" onAction="#pdfB" text="2PDF" />
+            <MenuItem fx:id="printB" mnemonicParsing="false" onAction="#printB" text="To Printer" />
+            <MenuItem fx:id="o2pdf" mnemonicParsing="false" onAction="#pdfB" text="To PDF" />
         </Menu>
         <Menu mnemonicParsing="false" text="Tools">
             <MenuItem fx:id="searchB" mnemonicParsing="false" onAction="#searchF" text="Search" />
             <MenuItem fx:id="copyB" mnemonicParsing="false" onAction="#copyF" text="Copy" />
             <MenuItem fx:id="pasteB" mnemonicParsing="false" onAction="#pasteF" text="Paste" />
             <MenuItem fx:id="cutB" mnemonicParsing="false" onAction="#cutF" text="Cut" />
+         <MenuItem fx:id="restore" mnemonicParsing="false" onAction="#restoreaction" text="Restore" />
+         <MenuItem fx:id="undo" mnemonicParsing="false" onAction="#undoaction" text="Undo" />
             <MenuItem fx:id="tdB" mnemonicParsing="false" onAction="#tdF" text="Time/Date" />
         </Menu>
         <Menu mnemonicParsing="false" text="Help">
@@ -28,6 +30,6 @@
         </Menu>
     </MenuBar>
     <AnchorPane layoutX="112.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
-        <CodeArea fx:id="text" onMouseClicked="#apc" prefHeight="374.0" prefWidth="586.0" stylesheets="@../../style/java.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <CodeArea fx:id="text" onKeyPressed="#spc" onMouseClicked="#apc" prefHeight="374.0" prefWidth="586.0" stylesheets="@../../style/java.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
     </AnchorPane>
 </AnchorPane>

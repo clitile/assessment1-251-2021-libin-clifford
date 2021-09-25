@@ -250,13 +250,17 @@ public class PrimaryController implements Initializable {
     void pdfB(ActionEvent event) throws  IOException, DocumentException {
         if (!Objects.equals(text.getText(), "")){
             FileChooser chooser = new FileChooser();
-            chooser.setTitle("Save file");
+            chooser.setTitle("Convert PDF");
             chooser.getExtensionFilters().addAll(
                     new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf")
             );
             File file = chooser.showSaveDialog(null);
             if (file != null) {
-                FileOp.O2PDF(text.getText(), file, font);
+                try {
+                    FileOp.O2PDF(text.getText(), file, font);
+                } catch (Exception e) {
+                    file.deleteOnExit();
+                }
             }
         }else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -375,6 +379,7 @@ public class PrimaryController implements Initializable {
         text.setWrapText(false);
 
         font = text.getFont();
+        System.out.println(font);
     }
 
     private Stage getStage() {

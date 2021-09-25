@@ -49,6 +49,12 @@ public class SecondaryController implements Initializable {
     private MenuItem openB;
 
     @FXML
+    private MenuItem undo;
+
+    @FXML
+    private MenuItem restore;
+
+    @FXML
     private MenuItem saveB;
 
     @FXML
@@ -115,6 +121,34 @@ public class SecondaryController implements Initializable {
         }
         spansBuilder.add(Collections.emptyList(), text.length() - lastKwEnd);
         return spansBuilder.create();
+    }
+
+    int nowposition=0;
+    ArrayList<String> alltxt=new ArrayList<>();
+    @FXML
+    void spc(KeyEvent event) {
+        if (nowposition==0){
+            alltxt.add(text.getText());
+            nowposition=nowposition+1;
+        }
+        if (text.getText()!=""){
+            if (alltxt.get(nowposition-1).equals(text.getText())==false){
+                alltxt.add(text.getText());
+                nowposition=nowposition+1;
+            }
+        }
+    }
+
+    @FXML
+    void undoaction(ActionEvent actionEvent) {
+        nowposition=nowposition-1;
+        text.appendText(alltxt.get(nowposition));
+    }
+
+    @FXML
+    void  restoreaction(ActionEvent actionEvent) {
+        nowposition=nowposition+1;
+        text.appendText(alltxt.get(nowposition));
     }
 
     private static class DefaultContextMenu extends ContextMenu {

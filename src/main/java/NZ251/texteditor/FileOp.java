@@ -2,8 +2,8 @@ package NZ251.texteditor;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfWriter;
 import javafx.scene.text.Font;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -43,7 +43,9 @@ public class FileOp {
         OutputStream os = new FileOutputStream(outfile);
         PdfWriter.getInstance(document, os);
         document.open();
-        document.add(new Paragraph(content, FontFactory.getFont(String.valueOf(font))));
+        BaseFont bf = BaseFont.createFont("src/main/resources/font/simhei.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        com.itextpdf.text.Font font1 = new com.itextpdf.text.Font(bf);
+        document.add(new Paragraph(content, font1));
         document.close();
     }
 
