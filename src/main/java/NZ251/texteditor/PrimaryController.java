@@ -147,8 +147,8 @@ public class PrimaryController implements Initializable {
             alltxt.add(text.getText());
             nowposition=nowposition+1;
         }
-        if (text.getText()!=""){
-            if (alltxt.get(nowposition-1).equals(text.getText())==false){
+        if (!Objects.equals(text.getText(), "")){
+            if (!alltxt.get(nowposition - 1).equals(text.getText())){
                 alltxt.add(text.getText());
                 nowposition=nowposition+1;
             }
@@ -170,18 +170,14 @@ public class PrimaryController implements Initializable {
     @FXML
     void apc(MouseEvent event) {
         Clipboard clipboard = Clipboard.getSystemClipboard();
-        if (text.getText()!="" && alltxt.get(nowposition-1).equals(text.getText())==false){
+        if (!Objects.equals(text.getText(), "") && !alltxt.get(nowposition - 1).equals(text.getText())){
             alltxt.add(text.getText());
             nowposition=nowposition+1;
         }
         if (alltxt.size()!=0){
             undo.setDisable(false);
         }
-        if (alltxt.size()>nowposition){
-            restore.setDisable(false);
-        }else{
-            restore.setDisable(true);
-        }
+        restore.setDisable(alltxt.size() <= nowposition);
         if (clipboard.getString() != null) {
             pasteB.setDisable(clipboard.getString().equals("") && chosen.equals(""));
             if (text.getSelectedText().equals("")){

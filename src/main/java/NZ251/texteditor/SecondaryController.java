@@ -131,8 +131,8 @@ public class SecondaryController implements Initializable {
             alltxt.add(text.getText());
             nowposition=nowposition+1;
         }
-        if (text.getText()!=""){
-            if (alltxt.get(nowposition-1).equals(text.getText())==false){
+        if (!Objects.equals(text.getText(), "")){
+            if (!alltxt.get(nowposition - 1).equals(text.getText())){
                 alltxt.add(text.getText());
                 nowposition=nowposition+1;
             }
