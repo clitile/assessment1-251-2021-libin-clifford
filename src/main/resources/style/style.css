@@ -1,21 +1,25 @@
-.text-area {
-    -fx-font-size: 20px;
+.text-area{
+    -fx-background-insets: 0;
+    -fx-background-color: transparent, white, transparent, white;
 }
+
+.text-area .content {
+    -fx-background-color: transparent, white, transparent, white;
+}
+
+.text-area:focused {
+    -fx-background-color: transparent, white, transparent, white;
+}
+
 .menu-bar{
     -fx-background-repeat: no-repeat;
     -fx-background-image: url(bk.png);
     -fx-background-size: cover;
 }
-.menu-item{
-    -fx-background-color: cadetblue;
-    -fx-background-radius: 20;
-    -fx-text-fill: antiquewhite;
-    -fx-font-family: 'Microsoft YaHei UI';
-}
-.menu{
-    -fx-background-color: cadetblue;
-    -fx-background-radius: 20;
-    -fx-text-fill: antiquewhite;
-    -fx-font-family: 'Microsoft YaHei UI';
-}
 
+/*.menu{*/
+/*    -fx-background-color: cadetblue;*/
+/*    -fx-background-radius: 20;*/
+/*    -fx-text-fill: antiquewhite;*/
+/*    -fx-font-family: 'Microsoft YaHei UI';*/
+/*}*/
