@@ -3,6 +3,5 @@ codearea窗口和打开的窗口保持一致
 魏：
 撤销的小bug。
 all:
-yaml文件配置
 打包exe
 测试案例

@@ -3,6 +3,7 @@ package NZ251.texteditor;
 import com.itextpdf.text.DocumentException;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,6 +14,7 @@ import javafx.scene.input.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -71,7 +73,7 @@ public class PrimaryController implements Initializable {
     private MenuItem saveasB;
 
     @FXML
-    private TextArea text;
+    public  TextArea text;
 
     @FXML
     private AnchorPane root;
@@ -82,10 +84,11 @@ public class PrimaryController implements Initializable {
 
     private String abPath = "";
 
-    private Stage stage;
+    public Stage stage;
 
     public static Font font;
     public static String t = "";
+
 
     @FXML
     void aboutF(ActionEvent event) {
@@ -267,11 +270,11 @@ public class PrimaryController implements Initializable {
             alert.showAndWait();
         }
     }
-
+    private String pdfpath="src\\main\\java\\NZ251\\texteditor\\a.pdf";
     @FXML
     void printB(ActionEvent event) throws Exception {
         if (!Objects.equals(text.getText(), "")){
-            FileOp.O2PDF(text.getText(), new File("src\\main\\java\\NZ251\\texteditor\\a.pdf"), font);
+            FileOp.O2PDF(text.getText(), new File(pdfpath), font);
             testPdf2images();
             InputStream inputStream = new FileInputStream("src\\main\\java\\NZ251\\texteditor\\a.png");;
             PrintDemo pd=new PrintDemo();
@@ -375,8 +378,10 @@ public class PrimaryController implements Initializable {
         text.setWrapText(false);
 
         font = text.getFont();
-        System.out.println(font);
+        text.setFont(Font.font(20));
+
     }
+
 
     private Stage getStage() {
         stage = (Stage) root.getScene().getWindow();
@@ -384,10 +389,44 @@ public class PrimaryController implements Initializable {
     }
 
     private void testPdf2images() throws Exception {
-        List<byte[]> images = pdf2images(new File("src\\main\\java\\NZ251\\texteditor\\a.pdf"));
+        List<byte[]> images = pdf2images(new File(pdfpath));
         AtomicInteger fileNameIndex = new AtomicInteger(1);
         for (byte[] image : images) {
             new ByteArrayInputStream(image).transferTo(new FileOutputStream("src\\main\\java\\NZ251\\texteditor\\" + "a.png"));
         }
+    }
+
+    public void settings(ActionEvent actionEvent) throws IOException {
+        ChoiceBox fsize = new ChoiceBox();
+        TextField path = new TextField();
+
+        ReadYAML readYAML = new ReadYAML("src/main/resources/conf/key.yaml");
+
+        fsize.setItems(FXCollections.observableArrayList(
+                15,16, 17,18,19,20,21,22,23,24,25)
+        );
+        fsize.setValue(readYAML.properties.get("size"));
+        path.setText("src\\main\\java\\NZ251\\texteditor\\a.pdf");
+        Label a=new Label("Font size:");
+        Label d=new Label("Path:");
+        Button bb=new Button("Application");
+        VBox hbox = new VBox();
+        hbox.getChildren().addAll(a,fsize);
+        hbox.getChildren().addAll(d,path);
+        hbox.getChildren().addAll(bb);
+        Scene scene = new Scene(hbox);
+        Stage second = new Stage();
+        second.setScene(scene);
+        second.setTitle("Setting");
+        second.getIcons().add(new Image("file:src\\main\\resources\\NZ251\\texteditor\\tu.jpg"));
+        second.show();
+
+        bb.setOnAction(item->{
+            int aaa=fsize.getSelectionModel().getSelectedIndex();
+            text.setFont(Font.font((Integer) fsize.getItems().get(aaa)));
+            pdfpath=path.getText();
+            System.out.println(path.getText());
+        });
+
     }
 }

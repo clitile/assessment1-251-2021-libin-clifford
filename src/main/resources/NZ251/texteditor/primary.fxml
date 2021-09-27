@@ -15,6 +15,7 @@
         <Menu mnemonicParsing="false" text="Edit">
             <MenuItem fx:id="printB" mnemonicParsing="false" onAction="#printB" text="To Printer" />
             <MenuItem fx:id="o2pdf" mnemonicParsing="false" onAction="#pdfB" text="To PDF" />
+         <MenuItem mnemonicParsing="false" onAction="#settings" text="Setting" />
         </Menu>
         <Menu mnemonicParsing="false" text="Tools">
             <MenuItem fx:id="searchB" mnemonicParsing="false" onAction="#searchF" text="Search" />
@@ -29,7 +30,7 @@
             <MenuItem fx:id="aboutB" mnemonicParsing="false" onAction="#aboutF" text="About" />
         </Menu>
     </MenuBar>
-    <TextArea fx:id="text" layoutY="26.0" onKeyPressed="#spc" onMouseClicked="#apc" prefHeight="374.0" prefWidth="600.0" stylesheets="@../../style/style.css" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+    <TextArea fx:id="text" layoutY="26.0" onKeyPressed="#spc" onMouseClicked="#apc" prefHeight="374.0" prefWidth="600.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
         <font>
           <Font name="Consolas" size="15.0" />
         </font>
