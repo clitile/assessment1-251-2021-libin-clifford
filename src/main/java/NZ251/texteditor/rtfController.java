@@ -204,7 +204,7 @@ public class rtfController implements Initializable {
         webEngine = text.getEngine();
         if (! t.equals("")) {
             System.out.println(t);
-            String url = App.class.getResource(t).toExternalForm();
+            String url = Objects.requireNonNull(App.class.getResource(t)).toExternalForm();
             webEngine.load(url);
         }
     }
