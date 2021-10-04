@@ -204,14 +204,15 @@ public class PrimaryController implements Initializable {
     }
 
     @FXML
-    void openF(ActionEvent event) throws IOException {
+    void openF(ActionEvent event) throws Exception {
         FileChooser chooser = new FileChooser();
         chooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt"),
                 new FileChooser.ExtensionFilter("All files (*.*)", "*.*"),
                 new FileChooser.ExtensionFilter(".py files (*.py)", "*.py"),
                 new FileChooser.ExtensionFilter("*.java files (*.java)", "*.java"),
-                new FileChooser.ExtensionFilter("*.cpp files (*.cpp)", "*.cpp")
+                new FileChooser.ExtensionFilter("*.cpp files (*.cpp)", "*.cpp"),
+                new FileChooser.ExtensionFilter("*.rtf files (*.rtf)", "*.rtf")
         );
         File file = chooser.showOpenDialog(null);
         if (file!=null){
@@ -241,6 +242,11 @@ public class PrimaryController implements Initializable {
                 SecondaryController.t = FileOp.readTXT(file);
                 SecondaryController.extention = extention;
                 App.setRoot("secondary");
+            } else if (extention.equals(".rtf")) {
+                rtfArea.rtf2Html(file);
+                String hName = file.getName().substring(0, file.getName().lastIndexOf(".")) + ".html";
+                rtfController.t = "rtftohtml/" + hName;
+                App.setRoot("rtfController");
             }
         }
     }
@@ -261,7 +267,7 @@ public class PrimaryController implements Initializable {
                     file.deleteOnExit();
                 }
             }
-        }else {
+        } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.headerTextProperty().set("There is no input");
@@ -346,24 +352,22 @@ public class PrimaryController implements Initializable {
 
     @FXML
     void saveasF(ActionEvent event) throws IOException {
-
-            FileChooser chooser = new FileChooser();
-            chooser.setTitle("Save file");
-            chooser.getExtensionFilters().addAll(
-                    new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt"),
-                    new FileChooser.ExtensionFilter("All files (*.*)", "*.*"),
-                    new FileChooser.ExtensionFilter(".py files (*.py)", "*.py"),
-                    new FileChooser.ExtensionFilter("*.java files (*.java)", "*.java"),
-                    new FileChooser.ExtensionFilter("*.cpp files (*.cpp)", "*.cpp")
-            );
-            File file = chooser.showSaveDialog(null);
-            if (file != null) {
-                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
-                String txt = text.getText();
-                bufferedWriter.write(txt);
-                bufferedWriter.close();
-            }
-
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Save file");
+        chooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt"),
+                new FileChooser.ExtensionFilter("All files (*.*)", "*.*"),
+                new FileChooser.ExtensionFilter(".py files (*.py)", "*.py"),
+                new FileChooser.ExtensionFilter("*.java files (*.java)", "*.java"),
+                new FileChooser.ExtensionFilter("*.cpp files (*.cpp)", "*.cpp")
+        );
+        File file = chooser.showSaveDialog(null);
+        if (file != null) {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+            String txt = text.getText();
+            bufferedWriter.write(txt);
+            bufferedWriter.close();
+        }
     }
 
     @Override
@@ -427,6 +431,5 @@ public class PrimaryController implements Initializable {
             pdfpath=path.getText();
             System.out.println(path.getText());
         });
-
     }
 }

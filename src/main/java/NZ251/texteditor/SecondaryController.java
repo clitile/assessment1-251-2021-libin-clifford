@@ -134,14 +134,14 @@ public class SecondaryController implements Initializable {
         if (!Objects.equals(text.getText(), "")){
             if (!alltxt.get(nowposition - 1).equals(text.getText())){
                 alltxt.add(text.getText());
-                nowposition=nowposition+1;
+                nowposition = nowposition+1;
             }
         }
     }
 
     @FXML
     void undoaction(ActionEvent actionEvent) {
-        nowposition=nowposition-1;
+        nowposition = nowposition-1;
         text.appendText(alltxt.get(nowposition));
     }
 
@@ -244,7 +244,7 @@ public class SecondaryController implements Initializable {
     }
 
     @FXML
-    void openF(ActionEvent event) throws IOException {
+    void openF(ActionEvent event) throws Exception {
         FileChooser chooser = new FileChooser();
         chooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt"),
@@ -261,7 +261,7 @@ public class SecondaryController implements Initializable {
             if (extention.equals(".txt")) {
                 PrimaryController.t = FileOp.readTXT(file);
                 App.setRoot("primary");
-            } else if (extention.equals(".java")) {
+            } else if (extention.equals(".java") || extention.equals(".py") || extention.equals(".cpp")) {
                 text.appendText(FileOp.readTXT(file));
 
                 saveB.setDisable(false);
@@ -278,6 +278,11 @@ public class SecondaryController implements Initializable {
                     }
                 });
                 saveB.setDisable(false);
+            } else if (extention.equals(".rtf")) {
+                rtfArea.rtf2Html(file);
+                String hName = file.getName().substring(0, file.getName().lastIndexOf(".")) + ".html";
+                rtfController.t = "rtftohtml/" + hName;
+                App.setRoot("rtfController");
             }
         }
     }
