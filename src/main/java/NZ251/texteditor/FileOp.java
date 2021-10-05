@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileOp {
-    public static boolean changeFlag = false;
 
+    // Reads the file and returns extention upon checking that the file 'extention'
     public static String getFileExtension (File file) {
         String extention = "";
         if (file != null && file.exists()) {
@@ -26,7 +26,7 @@ public class FileOp {
         }
         return extention;
     }
-
+    //Use bitstream to read TXT
     public static String readTXT(File file) throws IOException {
         byte[] bytes = new byte[1024];
         StringBuilder stringBuffer = new StringBuilder();
@@ -35,14 +35,16 @@ public class FileOp {
         while ((len = in.read(bytes)) != -1) {
             stringBuffer.append(new String(bytes, 0, len));
         }
+        // Finally, returns as a string
         return stringBuffer.toString();
     }
-
+    //read the pdf
     public static void O2PDF (String content, File outfile, Font font) throws IOException, DocumentException {
         Document document = new Document();
         OutputStream os = new FileOutputStream(outfile);
         PdfWriter.getInstance(document, os);
         document.open();
+        // Read in the font format
         BaseFont bf = BaseFont.createFont("src/main/resources/font/simhei.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         com.itextpdf.text.Font font1 = new com.itextpdf.text.Font(bf);
         document.add(new Paragraph(content, font1));
@@ -50,15 +52,15 @@ public class FileOp {
     }
 
     public static List<byte[]> pdf2images(File pdfFile) throws Exception {
-        //加载PDF
+        //load the PDF
         PDDocument pdDocument = PDDocument.load(pdfFile);
-        //创建PDF渲染器
+        //Create PDF renderer
         PDFRenderer renderer = new PDFRenderer(pdDocument);
         int pages = pdDocument.getNumberOfPages();
         List<byte[]> images = new ArrayList<>();
         for (int i = 0; i < pages; i++) {
             ByteArrayOutputStream output = new ByteArrayOutputStream();
-            //将PDF的每一页渲染成一张图片
+            //Render each page of the PDF into an image
             BufferedImage image = renderer.renderImage(i);
             ImageIO.write(image, "png", output);
             images.add(output.toByteArray());
