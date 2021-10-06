@@ -11,13 +11,10 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-
 import com.aspose.words.SaveFormat;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.hwpf.HWPFDocument;
-import org.apache.poi.hwpf.converter.PicturesManager;
 import org.apache.poi.hwpf.converter.WordToHtmlConverter;
-import org.apache.poi.hwpf.usermodel.PictureType;
 import org.w3c.dom.Document;
 
 
@@ -26,7 +23,7 @@ public class rtfArea {
         rtf2Html(new File("C:\\Users\\xiang\\Desktop\\rtf\\my.rtf"));
         System.out.println(rtfArea.class.getResource("rtftohtml/my.html"));
     }
-
+    // first convert RTF files to doc files, and then convert them to html to show
     public static void rtf2Html(File in) throws Exception {
         String name = in.getName();
         com.aspose.words.Document document = new com.aspose.words.Document(in.getAbsolutePath());
@@ -52,23 +49,18 @@ public class rtfArea {
             fos.close();
         }
     }
-
+    // write content to a html file
     private static void write2File(byte[] content, String path) {
         FileOutputStream fos = null;
-        BufferedWriter bw = null;
         try {
             File file = new File(path);
             fos = new FileOutputStream(file);
             fos.write(content);
             fos.close();
-        } catch (FileNotFoundException fnfe) {
+        } catch (IOException fnfe) {
             fnfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
         } finally {
             try {
-                if (bw != null)
-                    bw.close();
                 if (fos != null)
                     fos.close();
             } catch (IOException ie) {
@@ -76,7 +68,7 @@ public class rtfArea {
             }
         }
     }
-
+    // convert the doc to html files
     private static void convert2Html(String fileName, String outPutFile)
             throws TransformerException, IOException, ParserConfigurationException {
 
@@ -86,13 +78,9 @@ public class rtfArea {
 
         WordToHtmlConverter wordToHtmlConverter = new WordToHtmlConverter(
                 DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument());
-        wordToHtmlConverter.setPicturesManager(new PicturesManager() {
-            public String savePicture(byte[] content, PictureType pictureType, String suggestedName, float widthInches,
-                                      float heightInches) {
-                String encodedText = new String(encoder.encode(content));
-                String imgSrc = "data:" + pictureType.getMime() + ";" + "base64," + encodedText;
-                return imgSrc;
-            }
+        wordToHtmlConverter.setPicturesManager((content, pictureType, suggestedName, widthInches, heightInches) -> {
+            String encodedText = new String(encoder.encode(content));
+            return "data:" + pictureType.getMime() + ";" + "base64," + encodedText;
         });
         wordToHtmlConverter.processDocument(wordDocument);
 

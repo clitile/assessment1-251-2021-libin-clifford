@@ -78,12 +78,10 @@ public class PrimaryController implements Initializable {
         // Create a new window to display basic information when the event is triggered
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
-        alert.headerTextProperty().set("""
-                The statement:Prohibit infringement
-                Name:         Libin and Clifford
-                Date：         2021-9-15
-                Version:      1.0
-                """);
+        alert.headerTextProperty().set("The statement:Prohibit infringement\n" +
+                                       "Name:         Libin and Clifford\n" +
+                                       "Date：         2021-9-15\n" +
+                                       "Version:      1.0\n");
         // Contains a close button
         ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
         alert.getButtonTypes().setAll(buttonTypeCancel);
@@ -220,8 +218,9 @@ public class PrimaryController implements Initializable {
             abPath = file.getAbsolutePath();
             extention = FileOp.getFileExtension(file);
             // When it is a text type
-            switch (extention) {
-                case ".txt" -> {
+            // when it is a code type
+            switch (extention) {// Place the TXT content in the text area
+                case ".txt":
                     text.setText(FileOp.readTXT(file));
                     saveB.setDisable(false);
                     saveasB.setDisable(false);
@@ -229,24 +228,24 @@ public class PrimaryController implements Initializable {
                     printB.setDisable(false);
                     stage = getStage();
                     stage.setTitle("Text Editor-" + file.getName());
-                    // Place the TXT content in the text area
                     text.textProperty().addListener((observableValue, s, t1) -> System.out.println("changed"));
                     font = text.getFont();
                     saveB.setDisable(false);
-                }
-                // when it is a code type
-                case ".java", ".py", ".cpp" -> {
+                    break;
+// Open the TXT text in the second control and set the code style
+                case ".java":
+                case ".py":
+                case ".cpp":
                     SecondaryController.t = FileOp.readTXT(file);
-                    // Open the TXT text in the second control and set the code style
                     SecondaryController.extention = extention;
                     App.setRoot("secondary");
-                }
-                case ".rtf" -> {
+                    break;
+                case ".rtf":
                     rtfArea.rtf2Html(file);
                     String hName = file.getName().substring(0, file.getName().lastIndexOf(".")) + ".html";
                     rtfController.t = "rtftohtml/" + hName;
                     App.setRoot("rtfController");
-                }
+                    break;
             }
         }
     }

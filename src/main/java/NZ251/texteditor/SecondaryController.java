@@ -4,14 +4,13 @@ import com.itextpdf.text.DocumentException;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
-import javafx.event.ActionEvent;
-import javafx.scene.input.*;
-import org.reactfx.Subscription;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -23,9 +22,9 @@ import org.fxmisc.richtext.LineNumberFactory;
 import org.fxmisc.richtext.StyleClassedTextArea;
 import org.fxmisc.richtext.model.StyleSpans;
 import org.fxmisc.richtext.model.StyleSpansBuilder;
+import org.reactfx.Subscription;
 
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -43,18 +42,6 @@ public class SecondaryController implements Initializable {
     private AnchorPane root;
 
     @FXML
-    private MenuItem newB;
-
-    @FXML
-    private MenuItem openB;
-
-    @FXML
-    private MenuItem undo;
-
-    @FXML
-    private MenuItem restore;
-
-    @FXML
     private MenuItem saveB;
 
     @FXML
@@ -67,9 +54,6 @@ public class SecondaryController implements Initializable {
     private MenuItem o2pdf;
 
     @FXML
-    private MenuItem searchB;
-
-    @FXML
     private MenuItem copyB;
 
     @FXML
@@ -77,12 +61,6 @@ public class SecondaryController implements Initializable {
 
     @FXML
     private MenuItem cutB;
-
-    @FXML
-    private MenuItem tdB;
-
-    @FXML
-    private MenuItem aboutB;
 
     @FXML
     private StyleClassedTextArea text;
@@ -99,12 +77,13 @@ public class SecondaryController implements Initializable {
     public static String t = "";
     private ExecutorService executor;
     public static String[] KEYWORDS;
-
+    // Set the highlight
     private StyleSpans<Collection<String>> computeHighlighting(String text) {
         Matcher matcher = PATTERN.matcher(text);
         int lastKwEnd = 0;
         StyleSpansBuilder<Collection<String>> spansBuilder
                 = new StyleSpansBuilder<>();
+        // Set different colors to match the selected words
         while(matcher.find()) {
             String styleClass =
                     matcher.group("KEYWORD") != null ? "keyword" :
@@ -120,13 +99,15 @@ public class SecondaryController implements Initializable {
             lastKwEnd = matcher.end();
         }
         spansBuilder.add(Collections.emptyList(), text.length() - lastKwEnd);
+        // Returns the created text field
         return spansBuilder.create();
     }
-
+    // Search function, similar to initialization window
     int nowposition=0;
     ArrayList<String> alltxt=new ArrayList<>();
     @FXML
-    void spc(KeyEvent event) {
+        // Criteria for the search function
+    void spc() {
         if (nowposition==0){
             alltxt.add(text.getText());
             nowposition=nowposition+1;
@@ -138,19 +119,19 @@ public class SecondaryController implements Initializable {
             }
         }
     }
-
+    // Clipping function,Similar to the function in primaryController
     @FXML
-    void undoaction(ActionEvent actionEvent) {
+    void undoaction() {
         nowposition = nowposition-1;
         text.appendText(alltxt.get(nowposition));
     }
-
+    // Undo function, Similar to the function in primaryController
     @FXML
-    void  restoreaction(ActionEvent actionEvent) {
+    void  restoreaction() {
         nowposition=nowposition+1;
         text.appendText(alltxt.get(nowposition));
     }
-
+    // Set menu options
     private static class DefaultContextMenu extends ContextMenu {
         public DefaultContextMenu() {
             MenuItem fold = new MenuItem("Fold selected text");
@@ -178,9 +159,9 @@ public class SecondaryController implements Initializable {
             System.out.println( ((CodeArea) getOwnerNode()).getText() );
         }
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void aboutF(ActionEvent event) {
+    void aboutF() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.headerTextProperty().set("The statement:Prohibit infringement\n" +
@@ -191,9 +172,9 @@ public class SecondaryController implements Initializable {
         alert.getButtonTypes().setAll(buttonTypeCancel);
         alert.showAndWait();
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void apc(MouseEvent event) {
+    void apc() {
         Clipboard clipboard = Clipboard.getSystemClipboard();
         if (clipboard.getString() != null) {
             pasteB.setDisable(clipboard.getString().equals("") && chosen.equals(""));
@@ -206,9 +187,9 @@ public class SecondaryController implements Initializable {
             }
         }
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void copyF(ActionEvent event) {
+    void copyF() {
         chosen = text.getSelectedText();
 
         Clipboard clipboard = Clipboard.getSystemClipboard();
@@ -217,9 +198,9 @@ public class SecondaryController implements Initializable {
         clipboardContent.putString(chosen);
         clipboard.setContent(clipboardContent);
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void cutF(ActionEvent event) {
+    void cutF() {
         chosen = text.getSelectedText();
         int a = text.getCaretPosition();
         StringBuilder stringBuilder1 = new StringBuilder(text.getText());
@@ -232,9 +213,9 @@ public class SecondaryController implements Initializable {
         clipboardContent.putString(chosen);
         clipboard.setContent(clipboardContent);
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void newF(ActionEvent event) throws IOException {
+    void newF() throws IOException {
         Scene scene = new Scene(App.loadFXML("primary"));
         Stage second = new Stage();
         second.setScene(scene);
@@ -242,9 +223,9 @@ public class SecondaryController implements Initializable {
         second.getIcons().add(new Image("file:src\\main\\resources\\NZ251\\texteditor\\tu.jpg"));
         second.show();
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void openF(ActionEvent event) throws Exception {
+    void openF() throws Exception {
         FileChooser chooser = new FileChooser();
         chooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt"),
@@ -286,9 +267,9 @@ public class SecondaryController implements Initializable {
             }
         }
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void pasteF(ActionEvent event) {
+    void pasteF() {
         Clipboard clipboard = Clipboard.getSystemClipboard();
         if (!clipboard.getString().equals("")) {
             chosen = clipboard.getString();
@@ -298,9 +279,9 @@ public class SecondaryController implements Initializable {
         stringBuilder1.insert(a, chosen);
         text.appendText(stringBuilder1.toString());
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void pdfB(ActionEvent event) throws DocumentException, IOException {
+    void pdfB() throws DocumentException, IOException {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Save file");
         chooser.getExtensionFilters().addAll(
@@ -311,16 +292,16 @@ public class SecondaryController implements Initializable {
             FileOp.O2PDF(text.getText(), file, font);
         }
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void printB(ActionEvent event) throws InvocationTargetException {
+    void printB() {
         InputStream inputStream=new ByteArrayInputStream(text.getText().getBytes(StandardCharsets.UTF_8));
         PrintDemo printDemo=new PrintDemo();
         printDemo.printQRCode(inputStream);
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void saveF(ActionEvent event) throws IOException {
+    void saveF() throws IOException {
         String txt = text.getText();
 
         if (txt!=null && !abPath.equals("")) {
@@ -330,9 +311,9 @@ public class SecondaryController implements Initializable {
             bufferedWriter.close();
         }
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void saveasF(ActionEvent event) throws IOException {
+    void saveasF() throws IOException {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Save file");
         chooser.getExtensionFilters().addAll(
@@ -350,9 +331,9 @@ public class SecondaryController implements Initializable {
             bufferedWriter.close();
         }
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void searchF(ActionEvent event) {
+    void searchF() {
         Stage secondStage = new Stage();
         TextField find_tf = new TextField();
         Button find_bu = new Button("Search");
@@ -383,9 +364,9 @@ public class SecondaryController implements Initializable {
             text.selectRange(first, first + len);
         });
     }
-
+    // Similar to the function in primaryController
     @FXML
-    void tdF(ActionEvent event) {
+    void tdF() {
         Date date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String s=text.getText()+'\n'+dateFormat.format(date);
@@ -396,12 +377,12 @@ public class SecondaryController implements Initializable {
         stage = (Stage) root.getScene().getWindow();
         return stage;
     }
-
+    // Set the highlight, call the text
     private Task<StyleSpans<Collection<String>>> computeHighlightingAsync() {
         String txt = text.getText();
-        Task<StyleSpans<Collection<String>>> task = new Task<StyleSpans<Collection<String>>>() {
+        Task<StyleSpans<Collection<String>>> task = new Task<>() {
             @Override
-            protected StyleSpans<Collection<String>> call() throws Exception {
+            protected StyleSpans<Collection<String>> call() {
                 return computeHighlighting(txt);
             }
         };
@@ -412,7 +393,7 @@ public class SecondaryController implements Initializable {
     private void applyHighlighting(StyleSpans<Collection<String>> highlighting) {
         text.setStyleSpans(0, highlighting);
     }
-
+    // Initialize the Settings
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ReadYAML readYAML = new ReadYAML("src/main/resources/conf/key.yaml");
@@ -427,6 +408,7 @@ public class SecondaryController implements Initializable {
                 KEYWORDS = readYAML.properties.get("CPP_KEYWORD").toArray(new String[0]);
                 break;
         }
+        // The default key is not optional
         saveB.setDisable(true);
 
         copyB.setDisable(true);
@@ -437,7 +419,7 @@ public class SecondaryController implements Initializable {
 
         text.setParagraphGraphicFactory(LineNumberFactory.get(text));
         text.setContextMenu(new DefaultContextMenu());
-
+        // Set the rich text area,Walk through the string, judging all the words
         Subscription cleanupWhenDone = text.multiPlainChanges()
                 .successionEnds(Duration.ofMillis(500))
                 .supplyTask(this::computeHighlightingAsync)
@@ -454,11 +436,6 @@ public class SecondaryController implements Initializable {
 
         text.replaceText(0, 0, t);
         text.getCaretPosition();
-        text.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                saveB.setDisable(false);
-            }
-        });
+        text.textProperty().addListener((observableValue, s, t1) -> saveB.setDisable(false));
     }
 }

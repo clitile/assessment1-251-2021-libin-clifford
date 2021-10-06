@@ -1,6 +1,5 @@
 package NZ251.texteditor;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -9,7 +8,6 @@ import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -21,32 +19,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
-
+//Similar to PrimaryController, create a new window
 public class rtfController implements Initializable {
-
-    @FXML
-    private AnchorPane root;
-
-    @FXML
-    private MenuItem newB;
-
-    @FXML
-    private MenuItem openB;
-
     @FXML
     private MenuItem saveB;
-
-    @FXML
-    private MenuItem saveasB;
-
-    @FXML
-    private MenuItem printB;
-
-    @FXML
-    private MenuItem o2pdf;
-
-    @FXML
-    private MenuItem searchB;
 
     @FXML
     private MenuItem copyB;
@@ -64,51 +40,29 @@ public class rtfController implements Initializable {
     private MenuItem undo;
 
     @FXML
-    private MenuItem tdB;
-
-    @FXML
-    private MenuItem aboutB;
-
-    @FXML
     private WebView text;
 
-    private String chosen="";
-
     public static String extention = "";
-
     private String abPath = "";
-
-    private Stage stage;
-
     public static Font font;
     public static String t = "";
     WebEngine webEngine;
-
+    // Display related information
     @FXML
-    void aboutF(ActionEvent event) {
+    void aboutF() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.headerTextProperty().set("The statement:Prohibit infringement\n" +
-                "Name:         Libin and Clifford\n" +
-                "Date：         2021-9-15\n" +
-                "Version:      1.0\n");
+                                       "Name:         Libin and Clifford\n" +
+                                       "Date：         2021-9-15\n" +
+                                       "Version:      1.0\n");
         ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
         alert.getButtonTypes().setAll(buttonTypeCancel);
         alert.showAndWait();
     }
-
+    // Open a new window
     @FXML
-    void copyF(ActionEvent event) {
-
-    }
-
-    @FXML
-    void cutF(ActionEvent event) {
-
-    }
-
-    @FXML
-    void newF(ActionEvent event) throws IOException {
+    void newF() throws IOException {
         Scene scene = new Scene(App.loadFXML("primary"));
         Stage second = new Stage();
         second.setScene(scene);
@@ -116,9 +70,9 @@ public class rtfController implements Initializable {
         second.getIcons().add(new Image("file:src\\main\\resources\\NZ251\\texteditor\\tu.jpg"));
         second.show();
     }
-
+    // Open the file
     @FXML
-    void openF(ActionEvent event) throws Exception {
+    void openF() throws Exception {
         FileChooser chooser = new FileChooser();
         chooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt"),
@@ -145,52 +99,7 @@ public class rtfController implements Initializable {
             }
         }
     }
-
-    @FXML
-    void pasteF(ActionEvent event) {
-
-    }
-
-    @FXML
-    void pdfB(ActionEvent event) {
-
-    }
-
-    @FXML
-    void printB(ActionEvent event) {
-
-    }
-
-    @FXML
-    void restoreaction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void saveF(ActionEvent event) {
-
-    }
-
-    @FXML
-    void saveasF(ActionEvent event) {
-
-    }
-
-    @FXML
-    void searchF(ActionEvent event) {
-
-    }
-
-    @FXML
-    void tdF(ActionEvent event) {
-
-    }
-
-    @FXML
-    void undoaction(ActionEvent event) {
-
-    }
-
+    // Initialize the Settings
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         saveB.setDisable(true);
