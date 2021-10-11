@@ -1,3 +1,4 @@
+#Add code keywords
 JAVA_KEYWORD: ['abstract', 'assert', 'boolean', 'break', 'byte',
                'case', 'catch', 'char', 'class', 'const',
                'continue', 'default', 'do', 'double', 'else',
@@ -23,6 +24,6 @@ CPP_KEYWORD: ['if', 'else', 'while', 'signed', 'throw', 'union', 'this',
               'new', 'void', 'register', 'extern', 'return', 'enum', 'inline',
               'try', 'short', 'continue', 'sizeof', 'switch', 'private', 'protected',
               'asm', 'while', 'catch', 'delete', 'public', 'volatile', 'struct']
-
+#Set the configuration file, size, and file path
 size: 20
 paht: "src\\main\\java\\NZ251\\texteditor\\a.pdf"

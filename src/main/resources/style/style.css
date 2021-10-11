@@ -1,3 +1,4 @@
+/* Setting Background Configuration */
 .text-area{
     -fx-background-insets: 0;
     -fx-background-color: transparent, white, transparent, white;
@@ -17,9 +18,3 @@
     -fx-background-size: cover;
 }
 
-/*.menu{*/
-/*    -fx-background-color: cadetblue;*/
-/*    -fx-background-radius: 20;*/
-/*    -fx-text-fill: antiquewhite;*/
-/*    -fx-font-family: 'Microsoft YaHei UI';*/
-/*}*/
