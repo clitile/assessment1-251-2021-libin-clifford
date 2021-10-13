@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.2.5" timestamp="2021-10-13T19:16:36.571">
+<file name="C:\Users\10344\Desktop\&u65b0;&u5efa;&u6587;&u4ef6;&u5939;\assessment1-251-2021-libin-clifford\src\main\java\NZ251\texteditor\Savefile.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="43" rule="UnusedImports" ruleset="Import Statement Rules" package="NZ251.texteditor" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'com.itextpdf.text.DocumentException'
+</violation>
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="37" rule="UnusedImports" ruleset="Import Statement Rules" package="NZ251.texteditor" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'javafx.scene.control.TextArea'
+</violation>
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="38" rule="UnusedImports" ruleset="Import Statement Rules" package="NZ251.texteditor" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'javafx.scene.layout.AnchorPane'
+</violation>
+<violation beginline="6" endline="6" begincolumn="1" endcolumn="26" rule="UnusedImports" ruleset="Import Statement Rules" package="NZ251.texteditor" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'javafx.stage.Stage'
+</violation>
+<violation beginline="7" endline="7" begincolumn="1" endcolumn="36" rule="UnusedImports" ruleset="Import Statement Rules" package="NZ251.texteditor" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.fxmisc.richtext.CodeArea'
+</violation>
+</file>
+<file name="C:\Users\10344\Desktop\&u65b0;&u5efa;&u6587;&u4ef6;&u5939;\assessment1-251-2021-libin-clifford\src\main\java\NZ251\texteditor\Searchfile.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="30" rule="UnusedImports" ruleset="Import Statement Rules" package="NZ251.texteditor" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.io.BufferedWriter'
+</violation>
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="20" rule="UnusedImports" ruleset="Import Statement Rules" package="NZ251.texteditor" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.io.File'
+</violation>
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="26" rule="UnusedImports" ruleset="Import Statement Rules" package="NZ251.texteditor" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.io.FileWriter'
+</violation>
+<violation beginline="7" endline="7" begincolumn="1" endcolumn="27" rule="UnusedImports" ruleset="Import Statement Rules" package="NZ251.texteditor" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.ArrayList'
+</violation>
+<violation beginline="8" endline="8" begincolumn="1" endcolumn="22" rule="UnusedImports" ruleset="Import Statement Rules" package="NZ251.texteditor" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.List'
+</violation>
+</file>
+</pmd>
