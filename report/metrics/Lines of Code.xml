@@ -1,0 +1,830 @@
+<METRICS profile="Lines of Code" timestamp="ÖÜÈý, 13 10ÔÂ 2021 20:22:10 CST">
+	<METRIC category="Method" name="Comment lines of code" abbreviation="CLOC">
+		<VALUE measured="NZ251.texteditor.App.loadFXML(String)" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.App.main(String[])" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.App.setRoot(String)" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.App.start(Stage)" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.App.stop()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.O2PDF(String,File,Font)" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.getFileExtension(File)" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.pdf2images(File)" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.readTXT(File)" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.aboutF()" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.apc()" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.copyF()" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.cutF()" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.getStage()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.initialize(URL,ResourceBundle)" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.newF()" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.openF()" value="8.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pasteF()" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pdfB()" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.printB()" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.restoreaction()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveF()" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveasF()" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.searchF()" value="6.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.settings()" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.spc()" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.tdF()" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.testPdf2images()" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.undoaction()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.opentest()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.savetest()" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.searchtest()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo.printQRCode(InputStream)" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML(String)" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile.Save(String,String)" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile.Search(String,String)" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.DefaultContextMenu()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.fold()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.print()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.unfold()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.aboutF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.apc()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.applyHighlighting(StyleSpans&lt;Collection&lt;String&gt;&gt;)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlighting(String)" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlightingAsync()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.copyF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.cutF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.getStage()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.initialize(URL,ResourceBundle)" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.newF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.openF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pasteF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pdfB()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.printB()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.restoreaction()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveasF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.searchF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.spc()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.tdF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.undoaction()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.convert2Html(String,String)" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.main(String[])" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.rtf2Html(File)" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.write2File(byte[],String)" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.aboutF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.initialize(URL,ResourceBundle)" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.newF()" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.openF()" value="1.0"/>
+	</METRIC>
+	<METRIC category="Method" name="Comment ratio" abbreviation="COM_RAT">
+		<VALUE measured="NZ251.texteditor.App.loadFXML(String)" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.App.main(String[])" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.App.setRoot(String)" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.App.start(Stage)" value="0.1111111111111111"/>
+		<VALUE measured="NZ251.texteditor.App.stop()" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.FileOp.O2PDF(String,File,Font)" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.FileOp.getFileExtension(File)" value="0.1111111111111111"/>
+		<VALUE measured="NZ251.texteditor.FileOp.pdf2images(File)" value="0.17647058823529413"/>
+		<VALUE measured="NZ251.texteditor.FileOp.readTXT(File)" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.aboutF()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.apc()" value="0.15384615384615385"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.copyF()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.cutF()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.getStage()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.initialize(URL,ResourceBundle)" value="0.13333333333333333"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.newF()" value="0.18181818181818182"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.openF()" value="0.1568627450980392"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pasteF()" value="0.15384615384615385"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pdfB()" value="0.14285714285714285"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.printB()" value="0.19047619047619047"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.restoreaction()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveF()" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveasF()" value="0.13636363636363635"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.searchF()" value="0.16216216216216217"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.settings()" value="0.14705882352941177"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.spc()" value="0.13333333333333333"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.tdF()" value="0.2222222222222222"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.testPdf2images()" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.undoaction()" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.opentest()" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.savetest()" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.searchtest()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo.printQRCode(InputStream)" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML(String)" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.Savefile.Save(String,String)" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.Searchfile.Search(String,String)" value="0.07692307692307693"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.DefaultContextMenu()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.fold()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.print()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.unfold()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.aboutF()" value="0.07692307692307693"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.apc()" value="0.06666666666666667"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.applyHighlighting(StyleSpans&lt;Collection&lt;String&gt;&gt;)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlighting(String)" value="0.16"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlightingAsync()" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.copyF()" value="0.1111111111111111"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.cutF()" value="0.07692307692307693"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.getStage()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.initialize(URL,ResourceBundle)" value="0.07142857142857142"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.newF()" value="0.1"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.openF()" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pasteF()" value="0.08333333333333333"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pdfB()" value="0.07692307692307693"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.printB()" value="0.14285714285714285"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.restoreaction()" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveF()" value="0.09090909090909091"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveasF()" value="0.05"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.searchF()" value="0.030303030303030304"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.spc()" value="0.07142857142857142"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.tdF()" value="0.125"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.undoaction()" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.convert2Html(String,String)" value="0.04"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.main(String[])" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.rtf2Html(File)" value="0.038461538461538464"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.write2File(byte[],String)" value="0.05263157894736842"/>
+		<VALUE measured="NZ251.texteditor.rtfController.aboutF()" value="0.07692307692307693"/>
+		<VALUE measured="NZ251.texteditor.rtfController.initialize(URL,ResourceBundle)" value="0.058823529411764705"/>
+		<VALUE measured="NZ251.texteditor.rtfController.newF()" value="0.1"/>
+		<VALUE measured="NZ251.texteditor.rtfController.openF()" value="0.034482758620689655"/>
+	</METRIC>
+	<METRIC category="Method" name="Javadoc lines of code" abbreviation="JLOC">
+		<VALUE measured="NZ251.texteditor.App.loadFXML(String)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.App.main(String[])" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.App.setRoot(String)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.App.start(Stage)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.App.stop()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.O2PDF(String,File,Font)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.getFileExtension(File)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.pdf2images(File)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.readTXT(File)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.aboutF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.apc()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.copyF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.cutF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.getStage()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.initialize(URL,ResourceBundle)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.newF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.openF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pasteF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pdfB()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.printB()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.restoreaction()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveasF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.searchF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.settings()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.spc()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.tdF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.testPdf2images()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.undoaction()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.opentest()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.savetest()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.searchtest()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo.printQRCode(InputStream)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML(String)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile.Save(String,String)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile.Search(String,String)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.DefaultContextMenu()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.fold()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.print()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.unfold()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.aboutF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.apc()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.applyHighlighting(StyleSpans&lt;Collection&lt;String&gt;&gt;)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlighting(String)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlightingAsync()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.copyF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.cutF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.getStage()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.initialize(URL,ResourceBundle)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.newF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.openF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pasteF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pdfB()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.printB()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.restoreaction()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveasF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.searchF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.spc()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.tdF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.undoaction()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.convert2Html(String,String)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.main(String[])" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.rtf2Html(File)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.write2File(byte[],String)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.aboutF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.initialize(URL,ResourceBundle)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.newF()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.openF()" value="0.0"/>
+	</METRIC>
+	<METRIC category="Method" name="Lines of code" abbreviation="LOC">
+		<VALUE measured="NZ251.texteditor.App.loadFXML(String)" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.App.main(String[])" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.App.setRoot(String)" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.App.start(Stage)" value="9.0"/>
+		<VALUE measured="NZ251.texteditor.App.stop()" value="6.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.O2PDF(String,File,Font)" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.getFileExtension(File)" value="9.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.pdf2images(File)" value="17.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.readTXT(File)" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.aboutF()" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.apc()" value="26.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.copyF()" value="10.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.cutF()" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.getStage()" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.initialize(URL,ResourceBundle)" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.newF()" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.openF()" value="51.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pasteF()" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pdfB()" value="28.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.printB()" value="21.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.restoreaction()" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveF()" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveasF()" value="22.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.searchF()" value="37.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.settings()" value="34.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.spc()" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.tdF()" value="9.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.testPdf2images()" value="8.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.undoaction()" value="6.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.opentest()" value="6.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.savetest()" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.searchtest()" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo.printQRCode(InputStream)" value="18.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML()" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML(String)" value="10.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile.Save(String,String)" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile.Search(String,String)" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.DefaultContextMenu()" value="9.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.fold()" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.print()" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.unfold()" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.aboutF()" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.apc()" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.applyHighlighting(StyleSpans&lt;Collection&lt;String&gt;&gt;)" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlighting(String)" value="25.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlightingAsync()" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.copyF()" value="9.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.cutF()" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.getStage()" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.initialize(URL,ResourceBundle)" value="42.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.newF()" value="10.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.openF()" value="41.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pasteF()" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pdfB()" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.printB()" value="7.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.restoreaction()" value="6.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveF()" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveasF()" value="20.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.searchF()" value="33.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.spc()" value="14.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.tdF()" value="8.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.undoaction()" value="6.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.convert2Html(String,String)" value="25.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.main(String[])" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.rtf2Html(File)" value="26.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.write2File(byte[],String)" value="19.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.aboutF()" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.initialize(URL,ResourceBundle)" value="17.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.newF()" value="10.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.openF()" value="29.0"/>
+	</METRIC>
+	<METRIC category="Method" name="Non-comment lines of code" abbreviation="NCLOC">
+		<VALUE measured="NZ251.texteditor.App.loadFXML(String)" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.App.main(String[])" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.App.setRoot(String)" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.App.start(Stage)" value="8.0"/>
+		<VALUE measured="NZ251.texteditor.App.stop()" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.O2PDF(String,File,Font)" value="10.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.getFileExtension(File)" value="8.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.pdf2images(File)" value="14.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp.readTXT(File)" value="10.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.aboutF()" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.apc()" value="22.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.copyF()" value="8.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.cutF()" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.getStage()" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.initialize(URL,ResourceBundle)" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.newF()" value="9.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.openF()" value="44.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pasteF()" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pdfB()" value="25.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.printB()" value="17.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.restoreaction()" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveF()" value="10.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveasF()" value="19.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.searchF()" value="32.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.settings()" value="29.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.spc()" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.tdF()" value="7.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.testPdf2images()" value="6.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.undoaction()" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.opentest()" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.savetest()" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.searchtest()" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo.printQRCode(InputStream)" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML()" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML(String)" value="8.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile.Save(String,String)" value="10.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile.Search(String,String)" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.DefaultContextMenu()" value="9.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.fold()" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.print()" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.unfold()" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.aboutF()" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.apc()" value="14.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.applyHighlighting(StyleSpans&lt;Collection&lt;String&gt;&gt;)" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlighting(String)" value="22.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlightingAsync()" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.copyF()" value="8.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.cutF()" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.getStage()" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.initialize(URL,ResourceBundle)" value="39.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.newF()" value="9.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.openF()" value="40.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pasteF()" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pdfB()" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.printB()" value="6.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.restoreaction()" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveF()" value="10.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveasF()" value="19.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.searchF()" value="32.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.spc()" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.tdF()" value="7.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.undoaction()" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.convert2Html(String,String)" value="24.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.main(String[])" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.rtf2Html(File)" value="25.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.write2File(byte[],String)" value="18.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.aboutF()" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.initialize(URL,ResourceBundle)" value="16.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.newF()" value="9.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController.openF()" value="28.0"/>
+	</METRIC>
+	<METRIC category="Method" name="Relative lines of code" abbreviation="RLOC">
+		<VALUE measured="NZ251.texteditor.App.loadFXML(String)" value="0.14705882352941177"/>
+		<VALUE measured="NZ251.texteditor.App.main(String[])" value="0.08823529411764706"/>
+		<VALUE measured="NZ251.texteditor.App.setRoot(String)" value="0.11764705882352941"/>
+		<VALUE measured="NZ251.texteditor.App.start(Stage)" value="0.2647058823529412"/>
+		<VALUE measured="NZ251.texteditor.App.stop()" value="0.17647058823529413"/>
+		<VALUE measured="NZ251.texteditor.FileOp.O2PDF(String,File,Font)" value="0.23076923076923078"/>
+		<VALUE measured="NZ251.texteditor.FileOp.getFileExtension(File)" value="0.17307692307692307"/>
+		<VALUE measured="NZ251.texteditor.FileOp.pdf2images(File)" value="0.3269230769230769"/>
+		<VALUE measured="NZ251.texteditor.FileOp.readTXT(File)" value="0.23076923076923078"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.aboutF()" value="0.03826530612244898"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.apc()" value="0.0663265306122449"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.copyF()" value="0.025510204081632654"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.cutF()" value="0.03826530612244898"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.getStage()" value="0.012755102040816327"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.initialize(URL,ResourceBundle)" value="0.03826530612244898"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.newF()" value="0.02806122448979592"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.openF()" value="0.13010204081632654"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pasteF()" value="0.03316326530612245"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pdfB()" value="0.07142857142857142"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.printB()" value="0.05357142857142857"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.restoreaction()" value="0.012755102040816327"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveF()" value="0.030612244897959183"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveasF()" value="0.05612244897959184"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.searchF()" value="0.09438775510204081"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.settings()" value="0.08673469387755102"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.spc()" value="0.03826530612244898"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.tdF()" value="0.02295918367346939"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.testPdf2images()" value="0.02040816326530612"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.undoaction()" value="0.015306122448979591"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.opentest()" value="0.24"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.savetest()" value="0.48"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.searchtest()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo.printQRCode(InputStream)" value="0.9"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML()" value="0.125"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML(String)" value="0.625"/>
+		<VALUE measured="NZ251.texteditor.Savefile.Save(String,String)" value="0.8"/>
+		<VALUE measured="NZ251.texteditor.Searchfile.Search(String,String)" value="0.8125"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.DefaultContextMenu()" value="0.4090909090909091"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.fold()" value="0.13636363636363635"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.print()" value="0.13636363636363635"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.unfold()" value="0.18181818181818182"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.aboutF()" value="0.03513513513513514"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.apc()" value="0.04054054054054054"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.applyHighlighting(StyleSpans&lt;Collection&lt;String&gt;&gt;)" value="0.008108108108108109"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlighting(String)" value="0.06756756756756757"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlightingAsync()" value="0.032432432432432434"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.copyF()" value="0.024324324324324326"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.cutF()" value="0.03513513513513514"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.getStage()" value="0.010810810810810811"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.initialize(URL,ResourceBundle)" value="0.11351351351351352"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.newF()" value="0.02702702702702703"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.openF()" value="0.11081081081081082"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pasteF()" value="0.032432432432432434"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pdfB()" value="0.03513513513513514"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.printB()" value="0.01891891891891892"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.restoreaction()" value="0.016216216216216217"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveF()" value="0.02972972972972973"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveasF()" value="0.05405405405405406"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.searchF()" value="0.0891891891891892"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.spc()" value="0.03783783783783784"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.tdF()" value="0.021621621621621623"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.undoaction()" value="0.016216216216216217"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.convert2Html(String,String)" value="0.32894736842105265"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.main(String[])" value="0.05263157894736842"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.rtf2Html(File)" value="0.34210526315789475"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.write2File(byte[],String)" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.rtfController.aboutF()" value="0.14285714285714285"/>
+		<VALUE measured="NZ251.texteditor.rtfController.initialize(URL,ResourceBundle)" value="0.18681318681318682"/>
+		<VALUE measured="NZ251.texteditor.rtfController.newF()" value="0.10989010989010989"/>
+		<VALUE measured="NZ251.texteditor.rtfController.openF()" value="0.31868131868131866"/>
+	</METRIC>
+	<METRIC category="Method" name="True comment ratio" abbreviation="TCOM_RAT">
+		<VALUE measured="NZ251.texteditor.App.loadFXML(String)" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.App.main(String[])" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.App.setRoot(String)" value="0.3333333333333333"/>
+		<VALUE measured="NZ251.texteditor.App.start(Stage)" value="0.125"/>
+		<VALUE measured="NZ251.texteditor.App.stop()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.FileOp.O2PDF(String,File,Font)" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.FileOp.getFileExtension(File)" value="0.125"/>
+		<VALUE measured="NZ251.texteditor.FileOp.pdf2images(File)" value="0.21428571428571427"/>
+		<VALUE measured="NZ251.texteditor.FileOp.readTXT(File)" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.aboutF()" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.apc()" value="0.18181818181818182"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.copyF()" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.cutF()" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.getStage()" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.initialize(URL,ResourceBundle)" value="0.15384615384615385"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.newF()" value="0.2222222222222222"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.openF()" value="0.1590909090909091"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pasteF()" value="0.18181818181818182"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.pdfB()" value="0.12"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.printB()" value="0.23529411764705882"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.restoreaction()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveF()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.saveasF()" value="0.15789473684210525"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.searchF()" value="0.15625"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.settings()" value="0.1724137931034483"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.spc()" value="0.15384615384615385"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.tdF()" value="0.2857142857142857"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.testPdf2images()" value="0.3333333333333333"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController.undoaction()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.opentest()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.savetest()" value="0.09090909090909091"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest.searchtest()" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo.printQRCode(InputStream)" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML.ReadYAML(String)" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.Savefile.Save(String,String)" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.Searchfile.Search(String,String)" value="0.08333333333333333"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.DefaultContextMenu()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.fold()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.print()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu.unfold()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.aboutF()" value="0.08333333333333333"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.apc()" value="0.07142857142857142"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.applyHighlighting(StyleSpans&lt;Collection&lt;String&gt;&gt;)" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlighting(String)" value="0.13636363636363635"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.computeHighlightingAsync()" value="0.09090909090909091"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.copyF()" value="0.125"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.cutF()" value="0.08333333333333333"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.getStage()" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.initialize(URL,ResourceBundle)" value="0.07692307692307693"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.newF()" value="0.1111111111111111"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.openF()" value="0.025"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pasteF()" value="0.09090909090909091"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.pdfB()" value="0.08333333333333333"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.printB()" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.restoreaction()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveF()" value="0.1"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.saveasF()" value="0.05263157894736842"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.searchF()" value="0.03125"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.spc()" value="0.07692307692307693"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.tdF()" value="0.14285714285714285"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.undoaction()" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.convert2Html(String,String)" value="0.041666666666666664"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.main(String[])" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.rtf2Html(File)" value="0.04"/>
+		<VALUE measured="NZ251.texteditor.rtfArea.write2File(byte[],String)" value="0.05555555555555555"/>
+		<VALUE measured="NZ251.texteditor.rtfController.aboutF()" value="0.08333333333333333"/>
+		<VALUE measured="NZ251.texteditor.rtfController.initialize(URL,ResourceBundle)" value="0.0625"/>
+		<VALUE measured="NZ251.texteditor.rtfController.newF()" value="0.1111111111111111"/>
+		<VALUE measured="NZ251.texteditor.rtfController.openF()" value="0.03571428571428571"/>
+	</METRIC>
+	<METRIC category="Class" name="Comment lines of code" abbreviation="CLOC">
+		<VALUE measured="NZ251.texteditor.App" value="8.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="8.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="59.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="25.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="5.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Comment ratio" abbreviation="COM_RAT">
+		<VALUE measured="NZ251.texteditor.App" value="0.23529411764705882"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="0.13636363636363635"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="0.15384615384615385"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="0.15051020408163265"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="0.16"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="0.15"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="0.1875"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="0.2"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="0.125"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="0.07183908045977011"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="0.045454545454545456"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="0.039473684210526314"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="0.054945054945054944"/>
+	</METRIC>
+	<METRIC category="Class" name="Javadoc lines of code" abbreviation="JLOC">
+		<VALUE measured="NZ251.texteditor.App" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="0.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Lines of code" abbreviation="LOC">
+		<VALUE measured="NZ251.texteditor.App" value="34.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="22.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="52.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="392.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="25.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="20.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="16.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="16.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="348.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="22.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="76.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="91.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Non-comment lines of code" abbreviation="NCLOC">
+		<VALUE measured="NZ251.texteditor.App" value="26.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="19.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="44.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="336.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="22.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="17.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="14.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="324.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="21.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="73.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="86.0"/>
+	</METRIC>
+	<METRIC category="Class" name="True comment ratio" abbreviation="TCOM_RAT">
+		<VALUE measured="NZ251.texteditor.App" value="0.3076923076923077"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="0.15789473684210525"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="0.18181818181818182"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="0.13636363636363635"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="0.17647058823529413"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="0.23076923076923078"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="0.25"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="0.14285714285714285"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="0.07739938080495357"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="0.047619047619047616"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="0.0410958904109589"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="0.05813953488372093"/>
+	</METRIC>
+	<METRIC category="Package" name="Comment lines of code" abbreviation="CLOC">
+		<VALUE measured="" value="0.0"/>
+		<VALUE measured="NZ251.texteditor" value="0.0"/>
+		<VALUE measured="conf" value="0.0"/>
+		<VALUE measured="style" value="0.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Comment lines of code (recursive)" abbreviation="CLOC(rec)">
+		<VALUE measured="" value="134.0"/>
+		<VALUE measured="NZ251" value="127.0"/>
+		<VALUE measured="NZ251.texteditor" value="127.0"/>
+		<VALUE measured="conf" value="2.0"/>
+		<VALUE measured="style" value="2.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Comment ratio" abbreviation="COM_RAT">
+		<VALUE measured="" value="0.14285714285714285"/>
+		<VALUE measured="NZ251.texteditor" value="0.0918293564714389"/>
+		<VALUE measured="conf" value="0.07407407407407407"/>
+		<VALUE measured="style" value="0.044444444444444446"/>
+	</METRIC>
+	<METRIC category="Package" name="Comment ratio (recursive)" abbreviation="COM_RAT(rec)">
+		<VALUE measured="" value="0.09078590785907859"/>
+		<VALUE measured="NZ251" value="0.0918293564714389"/>
+		<VALUE measured="NZ251.texteditor" value="0.0918293564714389"/>
+		<VALUE measured="conf" value="0.07407407407407407"/>
+		<VALUE measured="style" value="0.044444444444444446"/>
+	</METRIC>
+	<METRIC category="Package" name="Javadoc lines of code" abbreviation="JLOC">
+		<VALUE measured="" value="0.0"/>
+		<VALUE measured="NZ251.texteditor" value="0.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Javadoc lines of code (recursive)" abbreviation="JLOC(rec)">
+		<VALUE measured="" value="0.0"/>
+		<VALUE measured="NZ251.texteditor" value="0.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Lines of code" abbreviation="LOC">
+		<VALUE measured="" value="21.0"/>
+		<VALUE measured="NZ251.texteditor" value="1383.0"/>
+		<VALUE measured="conf" value="27.0"/>
+		<VALUE measured="style" value="45.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Lines of code (recursive)" abbreviation="LOC(rec)">
+		<VALUE measured="" value="1476.0"/>
+		<VALUE measured="NZ251" value="1383.0"/>
+		<VALUE measured="NZ251.texteditor" value="1383.0"/>
+		<VALUE measured="conf" value="27.0"/>
+		<VALUE measured="style" value="45.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Lines of product code" abbreviation="LOCp">
+		<VALUE measured="" value="21.0"/>
+		<VALUE measured="NZ251.texteditor" value="1349.0"/>
+		<VALUE measured="conf" value="27.0"/>
+		<VALUE measured="style" value="45.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Lines of product code (recursive)" abbreviation="LOCp(rec)">
+		<VALUE measured="" value="1442.0"/>
+		<VALUE measured="NZ251" value="1349.0"/>
+		<VALUE measured="NZ251.texteditor" value="1349.0"/>
+		<VALUE measured="conf" value="27.0"/>
+		<VALUE measured="style" value="45.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Lines of test code" abbreviation="LOCt">
+		<VALUE measured="" value="0.0"/>
+		<VALUE measured="NZ251.texteditor" value="34.0"/>
+		<VALUE measured="conf" value="0.0"/>
+		<VALUE measured="style" value="0.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Lines of test code (recursive)" abbreviation="LOCt(rec)">
+		<VALUE measured="" value="34.0"/>
+		<VALUE measured="NZ251" value="34.0"/>
+		<VALUE measured="NZ251.texteditor" value="34.0"/>
+		<VALUE measured="conf" value="0.0"/>
+		<VALUE measured="style" value="0.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Non-comment lines of code" abbreviation="NCLOC">
+		<VALUE measured="" value="18.0"/>
+		<VALUE measured="NZ251.texteditor" value="1260.0"/>
+		<VALUE measured="conf" value="27.0"/>
+		<VALUE measured="style" value="43.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Non-comment lines of code (recursive)" abbreviation="NCLOC(rec)">
+		<VALUE measured="" value="1348.0"/>
+		<VALUE measured="NZ251" value="1260.0"/>
+		<VALUE measured="NZ251.texteditor" value="1260.0"/>
+		<VALUE measured="conf" value="27.0"/>
+		<VALUE measured="style" value="43.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Non-comment lines of code (product)" abbreviation="NCLOCp">
+		<VALUE measured="" value="18.0"/>
+		<VALUE measured="NZ251.texteditor" value="1230.0"/>
+		<VALUE measured="conf" value="27.0"/>
+		<VALUE measured="style" value="43.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Non-comment lines of code (product, recursive)" abbreviation="NCLOCp(rec)">
+		<VALUE measured="" value="1318.0"/>
+		<VALUE measured="NZ251" value="1230.0"/>
+		<VALUE measured="NZ251.texteditor" value="1230.0"/>
+		<VALUE measured="conf" value="27.0"/>
+		<VALUE measured="style" value="43.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Non-comment lines of code (test)" abbreviation="NCLOCt">
+		<VALUE measured="" value="0.0"/>
+		<VALUE measured="NZ251.texteditor" value="30.0"/>
+		<VALUE measured="conf" value="0.0"/>
+		<VALUE measured="style" value="0.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Non-comment lines of code (test, recursive)" abbreviation="NCLOCt(rec)">
+		<VALUE measured="" value="30.0"/>
+		<VALUE measured="NZ251" value="30.0"/>
+		<VALUE measured="NZ251.texteditor" value="30.0"/>
+	</METRIC>
+	<METRIC category="Package" name="True comment ratio" abbreviation="TCOM_RAT">
+		<VALUE measured="" value="0.16666666666666666"/>
+		<VALUE measured="NZ251.texteditor" value="0.09674861221252974"/>
+		<VALUE measured="conf" value="0.0"/>
+		<VALUE measured="style" value="0.046511627906976744"/>
+	</METRIC>
+	<METRIC category="Package" name="True comment ratio (recursive)" abbreviation="TCOM_RAT(rec)">
+		<VALUE measured="" value="0.09414381022979985"/>
+		<VALUE measured="NZ251" value="0.09674861221252974"/>
+		<VALUE measured="NZ251.texteditor" value="0.09674861221252974"/>
+		<VALUE measured="conf" value="0.0"/>
+		<VALUE measured="style" value="0.046511627906976744"/>
+	</METRIC>
+	<METRIC category="Package" name="Test ratio" abbreviation="TEST_RAT">
+		<VALUE measured="" value="0.0"/>
+		<VALUE measured="NZ251.texteditor" value="0.024584237165582067"/>
+		<VALUE measured="conf" value="0.0"/>
+		<VALUE measured="style" value="0.0"/>
+	</METRIC>
+	<METRIC category="Module" name="Comment lines of code" abbreviation="CLOC">
+		<VALUE measured="assessment1" value="134.0"/>
+	</METRIC>
+	<METRIC category="Module" name="Comment ratio" abbreviation="COM_RAT">
+		<VALUE measured="assessment1" value="0.05140007671653241"/>
+	</METRIC>
+	<METRIC category="Module" name="Javadoc lines of code" abbreviation="JLOC">
+		<VALUE measured="assessment1" value="0.0"/>
+	</METRIC>
+	<METRIC category="Module" name="Lines of code" abbreviation="LOC">
+		<VALUE measured="assessment1" value="2607.0"/>
+	</METRIC>
+	<METRIC category="Module" name="Lines of product code" abbreviation="LOCp">
+		<VALUE measured="assessment1" value="1442.0"/>
+	</METRIC>
+	<METRIC category="Module" name="Lines of test code" abbreviation="LOCt">
+		<VALUE measured="assessment1" value="34.0"/>
+	</METRIC>
+	<METRIC category="Module" name="Non-comment lines of code" abbreviation="NCLOC">
+		<VALUE measured="assessment1" value="2472.0"/>
+	</METRIC>
+	<METRIC category="Module" name="Non-comment lines of code (product)" abbreviation="NCLOCp">
+		<VALUE measured="assessment1" value="1318.0"/>
+	</METRIC>
+	<METRIC category="Module" name="Non-comment lines of code (test)" abbreviation="NCLOCt">
+		<VALUE measured="assessment1" value="30.0"/>
+	</METRIC>
+	<METRIC category="Module" name="True comment ratio" abbreviation="TCOM_RAT">
+		<VALUE measured="assessment1" value="0.05403225806451613"/>
+	</METRIC>
+	<METRIC category="Module" name="Test ratio" abbreviation="TEST_RAT">
+		<VALUE measured="assessment1" value="0.01304181051016494"/>
+	</METRIC>
+	<METRIC category="FileType" name="Comment lines of code" abbreviation="CLOC">
+		<VALUE measured=".gitignore (GitIgnore)" value="0.0"/>
+		<VALUE measured="Cascading style sheet" value="2.0"/>
+		<VALUE measured="HTML" value="0.0"/>
+		<VALUE measured="Java" value="130.0"/>
+		<VALUE measured="Markdown" value="0.0"/>
+		<VALUE measured="Text" value="0.0"/>
+		<VALUE measured="XML" value="0.0"/>
+		<VALUE measured="YAML" value="2.0"/>
+	</METRIC>
+	<METRIC category="FileType" name="Comment ratio" abbreviation="COM_RAT">
+		<VALUE measured=".gitignore (GitIgnore)" value="0.0"/>
+		<VALUE measured="Cascading style sheet" value="0.044444444444444446"/>
+		<VALUE measured="HTML" value="0.0"/>
+		<VALUE measured="Java" value="0.0997697620874904"/>
+		<VALUE measured="Markdown" value="0.0"/>
+		<VALUE measured="Text" value="0.0"/>
+		<VALUE measured="XML" value="0.0"/>
+		<VALUE measured="YAML" value="0.07407407407407407"/>
+	</METRIC>
+	<METRIC category="FileType" name="Lines of code" abbreviation="LOC">
+		<VALUE measured=".gitignore (GitIgnore)" value="2.0"/>
+		<VALUE measured="Cascading style sheet" value="45.0"/>
+		<VALUE measured="HTML" value="569.0"/>
+		<VALUE measured="Java" value="1303.0"/>
+		<VALUE measured="Markdown" value="16.0"/>
+		<VALUE measured="Text" value="8.0"/>
+		<VALUE measured="XML" value="637.0"/>
+		<VALUE measured="YAML" value="27.0"/>
+	</METRIC>
+	<METRIC category="FileType" name="Non-comment lines of code" abbreviation="NCLOC">
+		<VALUE measured=".gitignore (GitIgnore)" value="2.0"/>
+		<VALUE measured="Cascading style sheet" value="43.0"/>
+		<VALUE measured="HTML" value="569.0"/>
+		<VALUE measured="Java" value="1178.0"/>
+		<VALUE measured="Markdown" value="16.0"/>
+		<VALUE measured="XML" value="637.0"/>
+		<VALUE measured="YAML" value="27.0"/>
+	</METRIC>
+	<METRIC category="Project" name="Comment lines of code" abbreviation="CLOC">
+		<VALUE measured="project" value="134.0"/>
+	</METRIC>
+	<METRIC category="Project" name="Comment ratio" abbreviation="COM_RAT">
+		<VALUE measured="project" value="0.05140007671653241"/>
+	</METRIC>
+	<METRIC category="Project" name="Javadoc lines of code" abbreviation="JLOC">
+		<VALUE measured="project" value="0.0"/>
+	</METRIC>
+	<METRIC category="Project" name="Lines of code" abbreviation="LOC">
+		<VALUE measured="project" value="2607.0"/>
+	</METRIC>
+	<METRIC category="Project" name="Lines of product code" abbreviation="LOCp">
+		<VALUE measured="project" value="1442.0"/>
+	</METRIC>
+	<METRIC category="Project" name="Lines of test code" abbreviation="LOCt">
+		<VALUE measured="project" value="34.0"/>
+	</METRIC>
+	<METRIC category="Project" name="Non-comment lines of code" abbreviation="NCLOC">
+		<VALUE measured="project" value="2472.0"/>
+	</METRIC>
+	<METRIC category="Project" name="Non-comment lines of code (product)" abbreviation="NCLOCp">
+		<VALUE measured="project" value="1318.0"/>
+	</METRIC>
+	<METRIC category="Project" name="Non-comment lines of code (test)" abbreviation="NCLOCt">
+		<VALUE measured="project" value="30.0"/>
+	</METRIC>
+	<METRIC category="Project" name="True comment ratio" abbreviation="TCOM_RAT">
+		<VALUE measured="project" value="0.05403225806451613"/>
+	</METRIC>
+	<METRIC category="Project" name="Test ratio" abbreviation="TEST_RAT">
+		<VALUE measured="project" value="0.01304181051016494"/>
+	</METRIC>
+</METRICS>

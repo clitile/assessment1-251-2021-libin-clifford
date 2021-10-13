@@ -7,6 +7,7 @@
 - java 16
 - javafx 11
 - IDEA 2021
+- Since IDEA is used, the metrics folder is XML
 # Main Function
 - code highlighting when reading and writing .py, .java, .cpp files.
 - opening, reading, writeing, and saving text files(in 'File' menu).

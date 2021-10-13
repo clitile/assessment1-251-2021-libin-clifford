@@ -1,0 +1,225 @@
+<METRICS profile="Number of Methods" timestamp="ÖÜÈý, 13 10ÔÂ 2021 20:24:30 CST">
+	<METRIC category="Class" name="Number of commands" abbreviation="Command">
+		<VALUE measured="NZ251.texteditor.App" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="19.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="18.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="4.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Class size (operations)" abbreviation="CSO">
+		<VALUE measured="NZ251.texteditor.App" value="24.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="16.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="33.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="14.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="34.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="248.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="16.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="17.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Class size (operations + attributes)" abbreviation="CSOA">
+		<VALUE measured="NZ251.texteditor.App" value="26.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="20.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="16.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="53.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="53.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="322.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="16.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="29.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Number of JUnit test methods" abbreviation="JTM">
+		<VALUE measured="NZ251.texteditor.App" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="0.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Lack of Cohesion of Methods" abbreviation="LCOM">
+		<VALUE measured="NZ251.texteditor.App" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="3.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Number of operations added" abbreviation="NOAC">
+		<VALUE measured="NZ251.texteditor.App" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="20.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="21.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="4.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Number of operations inherited" abbreviation="NOIC">
+		<VALUE measured="NZ251.texteditor.App" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="191.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="11.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="11.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Number of operations overridden" abbreviation="NOOC">
+		<VALUE measured="NZ251.texteditor.App" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="0.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Average number of parameters" abbreviation="OPavg">
+		<VALUE measured="NZ251.texteditor.App" value="0.8"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="1.5"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="0.1"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="0.5"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="0.19047619047619047"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="1.5"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="0.5"/>
+	</METRIC>
+	<METRIC category="Class" name="Average operation size" abbreviation="OSavg">
+		<VALUE measured="NZ251.texteditor.App" value="2.2"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="8.25"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="10.1"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="7.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="9.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="7.739130434782608"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="4.25"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="13.5"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="10.25"/>
+	</METRIC>
+	<METRIC category="Class" name="Maximum operation size" abbreviation="OSmax">
+		<VALUE measured="NZ251.texteditor.App" value="5.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="32.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="6.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="12.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="7.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="9.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="27.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="22.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="17.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Number of queries" abbreviation="Query">
+		<VALUE measured="NZ251.texteditor.App" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="1.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="3.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="0.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="0.0"/>
+	</METRIC>
+	<METRIC category="Class" name="Response for class" abbreviation="RFC">
+		<VALUE measured="NZ251.texteditor.App" value="19.0"/>
+		<VALUE measured="NZ251.texteditor.CodeKeyWord" value="2.0"/>
+		<VALUE measured="NZ251.texteditor.FileOp" value="33.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryController" value="128.0"/>
+		<VALUE measured="NZ251.texteditor.PrimaryControllerTest" value="13.0"/>
+		<VALUE measured="NZ251.texteditor.PrintDemo" value="10.0"/>
+		<VALUE measured="NZ251.texteditor.ReadYAML" value="6.0"/>
+		<VALUE measured="NZ251.texteditor.Savefile" value="7.0"/>
+		<VALUE measured="NZ251.texteditor.Searchfile" value="4.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController" value="143.0"/>
+		<VALUE measured="NZ251.texteditor.SecondaryController.DefaultContextMenu" value="15.0"/>
+		<VALUE measured="NZ251.texteditor.rtfArea" value="48.0"/>
+		<VALUE measured="NZ251.texteditor.rtfController" value="43.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Number of JUnit test methods" abbreviation="JTM">
+		<VALUE measured="" value="0.0"/>
+		<VALUE measured="NZ251.texteditor" value="0.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Number of JUnit test methods (recursive)" abbreviation="JTM(rec)">
+		<VALUE measured="" value="0.0"/>
+		<VALUE measured="NZ251" value="0.0"/>
+		<VALUE measured="NZ251.texteditor" value="0.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Number of methods" abbreviation="METH">
+		<VALUE measured="" value="0.0"/>
+		<VALUE measured="NZ251.texteditor" value="72.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Number of methods (recursive)" abbreviation="METH(rec)">
+		<VALUE measured="" value="72.0"/>
+		<VALUE measured="NZ251" value="72.0"/>
+		<VALUE measured="NZ251.texteditor" value="72.0"/>
+	</METRIC>
+	<METRIC category="Module" name="Number of JUnit test methods" abbreviation="JTM">
+		<VALUE measured="assessment1" value="0.0"/>
+	</METRIC>
+	<METRIC category="Module" name="Number of methods" abbreviation="METH">
+		<VALUE measured="assessment1" value="72.0"/>
+	</METRIC>
+	<METRIC category="Project" name="Number of JUnit test methods" abbreviation="JTM">
+		<VALUE measured="project" value="0.0"/>
+	</METRIC>
+	<METRIC category="Project" name="Number of methods" abbreviation="METH">
+		<VALUE measured="project" value="70.0"/>
+	</METRIC>
+</METRICS>

@@ -1,0 +1,11 @@
+<METRICS profile="Code coupling metrics" timestamp="ÖÜÈý, 13 10ÔÂ 2021 20:23:48 CST">
+	<METRIC category="Package" name="Afferent couplings" abbreviation="Ca">
+		<VALUE measured="NZ251.texteditor" value="0.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Efferent couplings" abbreviation="Ce">
+		<VALUE measured="NZ251.texteditor" value="0.0"/>
+	</METRIC>
+	<METRIC category="Package" name="Instability" abbreviation="I">
+		<VALUE measured="NZ251.texteditor" value="1.0"/>
+	</METRIC>
+</METRICS>
