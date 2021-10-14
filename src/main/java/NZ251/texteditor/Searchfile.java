@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 //Written to test search methods
 public class Searchfile {
-    public static Integer Search(String value,String content) throws IOException {
+    public static int Search(String value,String content) throws IOException {
         int a=0;
         //This function should find all the lookups in the string
         for(int i=0;i<content.length();i++){
