@@ -71,7 +71,6 @@ public class PrimaryController implements Initializable {
     public static Font font;
     public static String t = "";
 
-
     @FXML
     // Display basic information
     void aboutF() {
